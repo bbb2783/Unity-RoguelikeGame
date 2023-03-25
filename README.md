@@ -1,9 +1,9 @@
 # Unity-RoguelikeGame
 <div align=center>
-	<img src="https://capsule-render.vercel.app/api?type=waving&color=&height=200&section=header&text=유니티%20플래피버드" />	
+	<img src="https://capsule-render.vercel.app/api?type=waving&color=&height=200&section=header&text=RoguelikeGame%20" />	
 </div>
 <div align=center>
-<h4> 유니티 2D 게임 플래피 버드입니다.</h4>
+<h4> 유니티 스토리 게임.</h4>
 </div>
 <div align=center>
 	<h3>📚 Tech Stack 📚</h3>
