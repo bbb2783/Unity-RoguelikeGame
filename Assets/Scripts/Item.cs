@@ -1,43 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-public class Item : MonoBehaviour
+
+public enum ItemType
 {
-    [SerializeField] Text pickupText;
-    bool isPickUp;
+    Equipment,
+    Consumables,
+    Etc
+}
 
-    void Start()
-    {
-        pickupText.gameObject.SetActive(false);
-    }
+[System.Serializable]
+public class Item
+{
+    public ItemType itemType;
+    public string itemName;
+    public Sprite itemImage;
 
-    void Update()
+    public bool Use()
     {
-        if (isPickUp && Input.GetKeyDown(KeyCode.Space))
-        {
-            Pickup();
-        }
-    }
-    void OnTriggerEnter2D(Collider2D col)
-    {
-        if(col.gameObject.tag.Equals("Player"))
-        {
-            pickupText.gameObject.SetActive(true);
-            isPickUp = true;
-        }
-    }
-    void OnTriggerExit2D(Collider2D col)
-    {
-        if(col.gameObject.tag.Equals("Player"))
-        {
-            pickupText.gameObject.SetActive(false);
-            isPickUp = false;
-        }
-    }
-    
-    void Pickup()
-    {
-        Destroy(gameObject);
+        return false;
     }
 }
