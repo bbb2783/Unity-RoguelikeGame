@@ -6,16 +6,34 @@ public class PlayerMove : MonoBehaviour
 {
     public float speed = 1f;
 
-    void Update()
+
+    public KeyCode pickupKey; // 단축키 설정
+    public float pickupRadius = 1f; // 픽업 반경 설정
+    private Inventory inventory;
+
+    private void Start()
     {
-        // 가로 이동 반환값 : LeftArrow = -1 RightArrow = 1
-        var h = Input.GetAxisRaw("Horizontal");
-        // 세로 이동 반환값 : DownArrow = -1 UpArrow = 1        
-        var v = Input.GetAxisRaw("Vertical");
+        inventory = Inventory.instance;
+    }
 
-        //단위 벡터 (크기가 1인 벡터)
-        var dir = new Vector3(h, v, 0).normalized;
-
-        this.transform.Translate(dir * this.speed * Time.deltaTime);
+    private void Update()
+    {
+        // 픽업 단축키를 누르면 근처의 FieldItem 오브젝트를 획득
+        if (Input.GetKeyDown(pickupKey))
+        {
+            Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, pickupRadius);
+            foreach (Collider2D collider in colliders)
+            {
+                if (collider.CompareTag("FieldItem"))
+                {
+                    FieldItem fieldItem = collider.GetComponent<FieldItem>();
+                    if (fieldItem != null)
+                    {
+                        inventory.AddItem(fieldItem.GetItem());
+                        fieldItem.DestroyItem();
+                    }
+                }
+            }
+        }
     }
 }
