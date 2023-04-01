@@ -50,7 +50,11 @@ public class Inventory : MonoBehaviour
             
             return true;
         }
+        else
+    {
+        Debug.Log("인벤토리가 가득 찼습니다.");
         return false;
+    }
     }
     public void RemoveItem(Item item)
     {
@@ -74,7 +78,7 @@ public class Inventory : MonoBehaviour
     public OnInventoryChanged onInventoryChangedCallback;
 
    
-    //public int space = 20; // 인벤토리 슬롯 개수
+
 
     // 아이템을 인벤토리에 추가하는 메서드
     public bool Add(Item item)

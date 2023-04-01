@@ -2121,6 +2121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
+  pickupText: {fileID: 1059552768}
   pickupKey: 277
   pickupRadius: 1
 --- !u!50 &1033673907
@@ -2183,7 +2184,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   items: []
-  space: 20
 --- !u!1 &1059552766
 GameObject:
   m_ObjectHideFlags: 0
@@ -2196,7 +2196,7 @@ GameObject:
   - component: {fileID: 1059552769}
   - component: {fileID: 1059552768}
   m_Layer: 5
-  m_Name: PickUpText
+  m_Name: PickupText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2255,7 +2255,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Space bar\uB97C \uB20C\uB7EC \uC544\uC774\uD15C\uC744 \uC218\uC9D1\uD558\uC138\uC694"
+  m_Text: Press [pickupKey] to pick up
 --- !u!222 &1059552769
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4129,6 +4129,10 @@ PrefabInstance:
       propertyPath: pickupText
       value: 
       objectReference: {fileID: 1059552768}
+    - target: {fileID: 9108018057655776231, guid: cf41682c71097624d9aacd91172b9ac0, type: 3}
+      propertyPath: item.hotkey
+      value: 277
+      objectReference: {fileID: 0}
     - target: {fileID: 9108018057655776234, guid: cf41682c71097624d9aacd91172b9ac0, type: 3}
       propertyPath: m_RootOrder
       value: 1
