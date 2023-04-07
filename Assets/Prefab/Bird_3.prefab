@@ -125,6 +125,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item:
+    Atk: 0
+    itemDescription: "\uC2DD\uBB3C3"
     itemType: 0
     itemName: bird3
     itemImage: {fileID: 432820443, guid: b64587542e3726c448ba53fdd9f64e12, type: 3}
