@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 33931486328785390}
   - component: {fileID: 7717143857167715876}
   - component: {fileID: 33931486328785391}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: ZombieA
   m_TagString: FieldItem
   m_Icon: {fileID: 0}
@@ -146,5 +146,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb62e9f260dfe6e439088424eeaccf28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
+  speed: 2
   target: {fileID: 0}
