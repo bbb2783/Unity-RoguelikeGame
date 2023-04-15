@@ -60,20 +60,6 @@ public class Inventory : MonoBehaviour
     {
         items.Remove(item);
     }
-
-    /*private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.tag == "FieldItem")
-        {
-            FieldItem fieldItem = collision.GetComponent<FieldItem>();
-                if(AddItem(fieldItem.GetItem()))
-                {
-                    fieldItem.DestroyItem();
-                }
-        }
-        }*/
-
-
     public delegate void OnInventoryChanged();
     public OnInventoryChanged onInventoryChangedCallback;
 
@@ -109,5 +95,39 @@ public class Inventory : MonoBehaviour
             onInventoryChangedCallback.Invoke();
         }
     }
+
+     public void CloseInventory()
+    {
+        // 인벤토리 UI를 비활성화
+        gameObject.SetActive(false);
+        
+        // Tooltip 오브젝트를 비활성화
+        Tooltip[] tooltips = GetComponentsInChildren<Tooltip>();
+        foreach (Tooltip tooltip in tooltips)
+        {
+            tooltip.gameObject.SetActive(false);
+        }
+    }
+
+    public void OpenInventory()
+{
+    // 인벤토리 UI를 활성화
+    gameObject.SetActive(true);
+
+    // 모든 슬롯에 대해 검사하여 아이템이 있는 경우 툴팁을 활성화
+    foreach (Transform child in transform)
+    {
+        Slot slot = child.GetComponent<Slot>();
+        if (slot != null && slot.item != null)
+        {
+            Tooltip tooltip = slot.GetComponentInChildren<Tooltip>();
+            if (tooltip != null)
+            {
+                tooltip.gameObject.SetActive(true);
+                tooltip.SetupTooltip(slot.item.itemName, slot.item.itemDescription, slot.item.Atk);
+            }
+        }
+    }
+}
 
 }
