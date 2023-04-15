@@ -24,7 +24,7 @@ public class MSpawner : MonoBehaviour
 
     void MSpawn()//몬스터 스폰
     {
-        GameObject MonsterZombieMove = MGameManager.instance.MonsterPool.GetZombie(Random.Range(0,1));
+        GameObject MonsterZombieMove = MGameManager.instance.MonsterPool.GetZombie(Random.Range(0,2));
         MonsterZombieMove.transform.position = MSPoint[Random.Range(1,MSPoint.Length)].position;
     }
 }

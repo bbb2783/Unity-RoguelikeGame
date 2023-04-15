@@ -9,6 +9,7 @@ public class MonsterPlayerMove : MonoBehaviour
 
     Rigidbody2D rigid;
 
+
     void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();

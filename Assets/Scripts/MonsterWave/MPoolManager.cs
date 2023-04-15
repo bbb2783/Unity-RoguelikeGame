@@ -19,7 +19,7 @@ public class MPoolManager : MonoBehaviour
             ZombiePool[index] = new List<GameObject>();
         }
 
-        Debug.Log(ZombiePool.Length);
+        //Debug.Log(ZombiePool.Length);
     }
 
     public GameObject GetZombie(int index)
