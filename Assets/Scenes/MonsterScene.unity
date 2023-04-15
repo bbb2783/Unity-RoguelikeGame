@@ -153,8 +153,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ZombieArr:
-  - {fileID: 6317041618643910322, guid: cf6ef21d1aac91644a80efb6d30843bf, type: 3}
-  - {fileID: 6317041618643910322, guid: 8332230b587506c48b589e0ddb06b1d4, type: 3}
+  - {fileID: 7153534366099459219, guid: 61b00e5907958364bb01795ab411ddf0, type: 3}
+  - {fileID: 7153534366099459219, guid: 17d7e85255b56e044ba3588896b7fcbc, type: 3}
 --- !u!4 &144595664
 Transform:
   m_ObjectHideFlags: 0
@@ -599,10 +599,10 @@ GameObject:
   m_Component:
   - component: {fileID: 541926019}
   - component: {fileID: 541926018}
+  - component: {fileID: 541926021}
   - component: {fileID: 541926016}
   - component: {fileID: 541926015}
   - component: {fileID: 541926020}
-  - component: {fileID: 541926021}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -1061,6 +1061,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 592db1dfff129ec43aab6f5ab9a56839, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameTime: 0
+  maxGameTime: 20
   player: {fileID: 541926020}
   MonsterPool: {fileID: 144595663}
 --- !u!4 &1056087580
@@ -1162,6 +1164,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MSPoint: []
+  SpawnData:
+  - spawnTime: 1
+    zombieHealth: 30
+    zombieSpeed: 1.5
+  - spawnTime: 0.7
+    zombieHealth: 50
+    zombieSpeed: 3
 --- !u!1 &1206072219
 GameObject:
   m_ObjectHideFlags: 0

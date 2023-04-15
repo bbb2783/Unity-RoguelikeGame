@@ -168,4 +168,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cda8b1eecd33ab746bfea63fcd56d627, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletSpd: 5
+  bulletSpd: 10

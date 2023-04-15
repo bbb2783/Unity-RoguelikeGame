@@ -5,16 +5,22 @@ using UnityEngine;
 public class MonsterZombieMove : MonoBehaviour
 {
     public float speed;
+    public float zombieHealth;
+    public float zombieMaxHealth;
+    //public RuntimeAnimatorController[] animacon;
+
     public Rigidbody2D target;
 
-    bool isLive = true;
+    bool isLive;
 
     Rigidbody2D rigid;
+    //Animator anime;
     SpriteRenderer spriter;
 
     void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
+        //anime = GetComponent<Animator>();
         spriter = GetComponent<SpriteRenderer>();
     }
 
@@ -37,5 +43,15 @@ public class MonsterZombieMove : MonoBehaviour
     void OnEnable()
     {
         target = MGameManager.instance.player.GetComponent<Rigidbody2D>();
+        isLive = true;
+        zombieHealth = zombieMaxHealth;
+    }
+
+    public void Init(SpawnData data)
+    {
+        //anime.runtimeAnimatorController = animacon[data.spriteType];
+        speed = data.zombieSpeed;
+        zombieMaxHealth = data.zombieHealth;
+        zombieHealth = data.zombieHealth;
     }
 }
