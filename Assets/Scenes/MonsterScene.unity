@@ -155,6 +155,7 @@ MonoBehaviour:
   ZombieArr:
   - {fileID: 7153534366099459219, guid: 61b00e5907958364bb01795ab411ddf0, type: 3}
   - {fileID: 7153534366099459219, guid: 17d7e85255b56e044ba3588896b7fcbc, type: 3}
+  - {fileID: 7153534366099459219, guid: 17d7e85255b56e044ba3588896b7fcbc, type: 3}
 --- !u!4 &144595664
 Transform:
   m_ObjectHideFlags: 0
@@ -1185,6 +1186,9 @@ MonoBehaviour:
   - spawnTime: 1
     zombieHealth: 30
     zombieSpeed: 1.5
+  - spawnTime: 0.7
+    zombieHealth: 50
+    zombieSpeed: 3
   - spawnTime: 0.7
     zombieHealth: 50
     zombieSpeed: 3

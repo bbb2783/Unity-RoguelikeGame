@@ -7,7 +7,7 @@ public class MGameManager : MonoBehaviour
     public static MGameManager instance;
     
     public float gameTime;
-    public float maxGameTime = 2 * 10f;
+    public float maxGameTime = 2*10f;
 
     public MonsterPlayerMove player;
     public MPoolManager MonsterPool;

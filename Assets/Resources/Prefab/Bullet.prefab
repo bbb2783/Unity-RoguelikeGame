@@ -169,4 +169,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletSpd: 10
-  BDamage: 100
+  BDamage: 30
