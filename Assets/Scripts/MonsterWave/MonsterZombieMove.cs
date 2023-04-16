@@ -54,4 +54,26 @@ public class MonsterZombieMove : MonoBehaviour
         zombieMaxHealth = data.zombieHealth;
         zombieHealth = data.zombieHealth;
     }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (!collision.CompareTag("Bullet")) return; //총알과 충돌한게 아니면 리턴
+
+        zombieHealth -= collision.GetComponent<MBullet>().BDamage;
+
+        if (zombieHealth > 0)
+        {
+            //live
+        }
+        else 
+        {
+            //die
+            Dead();
+        }
+
+        void Dead()
+        {
+            gameObject.SetActive(false);
+        }
+    }
 }

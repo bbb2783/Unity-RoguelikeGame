@@ -5,6 +5,8 @@ using UnityEngine;
 public class MBullet : MonoBehaviour
 {
     public float bulletSpd;
+    public float BDamage;
+    //public int per;
 
     private float BulletTimer;
     void Start()
@@ -20,8 +22,16 @@ public class MBullet : MonoBehaviour
         }
     }
 
-    private void OntriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        Destroy(gameObject);
+        if (collision.tag.Equals("Monster"))
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    public void Init(float BDamage)//대미지 초기화
+    {
+        this.BDamage = BDamage;
     }
 }

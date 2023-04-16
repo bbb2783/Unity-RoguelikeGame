@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3788753212423322574}
   m_Layer: 3
   m_Name: ZombieB
-  m_TagString: FieldItem
+  m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -149,7 +149,4 @@ MonoBehaviour:
   speed: 6
   zombieHealth: 30
   zombieMaxHealth: 30
-  animacon:
-  - {fileID: 9100000, guid: a29c1bcdd934494488e45d6ae7af3e86, type: 2}
-  - {fileID: 9100000, guid: d2f5764c9a687884684631e04f59040f, type: 2}
   target: {fileID: 0}
