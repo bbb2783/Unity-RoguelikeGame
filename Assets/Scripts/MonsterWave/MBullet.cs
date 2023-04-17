@@ -28,6 +28,10 @@ public class MBullet : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        if (collision.tag.Equals("wall"))
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void Init(float BDamage)//대미지 초기화

@@ -8,6 +8,7 @@ TagManager:
   - Item
   - Bullet
   - Monster
+  - wall
   layers:
   - Default
   - TransparentFX

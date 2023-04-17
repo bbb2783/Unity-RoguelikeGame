@@ -9,7 +9,6 @@ public class MonsterPlayerMove : MonoBehaviour
 
     Rigidbody2D rigid;
 
-
     void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
@@ -19,6 +18,7 @@ public class MonsterPlayerMove : MonoBehaviour
     {
         inputVec.x = Input.GetAxisRaw("Horizontal");
         inputVec.y = Input.GetAxisRaw("Vertical");
+
     }
 
     void FixedUpdate()
