@@ -6,15 +6,18 @@ TagManager:
   tags:
   - FieldItem
   - Item
+  - Bullet
+  - Monster
+  - wall
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - zombieA
   - Water
   - UI
-  - Other
-  - 
+  - player
+  - bullet
   - 
   - 
   - 

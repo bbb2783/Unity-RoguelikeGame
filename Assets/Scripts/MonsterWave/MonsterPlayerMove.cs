@@ -18,6 +18,7 @@ public class MonsterPlayerMove : MonoBehaviour
     {
         inputVec.x = Input.GetAxisRaw("Horizontal");
         inputVec.y = Input.GetAxisRaw("Vertical");
+
     }
 
     void FixedUpdate()
