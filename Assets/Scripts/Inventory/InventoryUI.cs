@@ -37,6 +37,11 @@ public class InventoryUI : MonoBehaviour
 
     private void Update()
     {
+
+        if(Input.GetMouseButtonDown(0) || Input.GetMouseButton(0))
+        {
+            transform.position = Input.mousePosition;
+        }
         if(Input.GetKeyDown(KeyCode.I)) 
         {
             activeInventory = !activeInventory; // i키를 눌려서 false된 인벤토리를 true값으로 바꿔서 실행
