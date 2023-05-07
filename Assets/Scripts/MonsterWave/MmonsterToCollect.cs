@@ -10,7 +10,7 @@ public class MmonsterToCollect : MonoBehaviour
     //MSpawner mSpawner;
     //MonsterPlayerMove monsterPlayerMove;
     public GameObject MSpawner;
-    public GameObject MonsterPlayerMove;
+    public GameObject MGameManager;
     float isLevel;
     float isPlayerLive;
 
@@ -21,14 +21,14 @@ public class MmonsterToCollect : MonoBehaviour
         //monsterPlayerMove = GameObject.FindWithTag("Player").GetComponent<MonsterPlayerMove>();
         //Invoke ("sceneChange",3);
         isLevel = MSpawner.GetComponent<MSpawner>().spawnLevel;
-        isPlayerLive = MonsterPlayerMove.GetComponent<MonsterPlayerMove>().playerHealth;
+        isPlayerLive = MGameManager.GetComponent<MGameManager>().playerHealth;
     }
     
     
     void Update()
     {
         if((MSpawner.GetComponent<MSpawner>().spawnLevel==2)
-            &&(MonsterPlayerMove.GetComponent<MonsterPlayerMove>().playerHealth>0))
+            &&(MGameManager.GetComponent<MGameManager>().playerHealth>0))
         {
             SceneManager.LoadScene("SampleScene");
         }

@@ -22,11 +22,16 @@ public class MHUD : MonoBehaviour
         switch (type) 
         {
             case InfoType.Time:
-
+                float remainTime = MGameManager.instance.maxGameTime - MGameManager.instance.gameTime;
+                int min = Mathf.FloorToInt(remainTime / 60);
+                int sec = Mathf.FloorToInt(remainTime % 60);
+                myText.text = string.Format("{0:D2}:{1:D2}",min,sec);
                 break;
 
             case InfoType.PlayerHealth:
-
+                float curHealth = MGameManager.instance.playerHealth;
+                float maxHealth = MGameManager.instance.playerMaxHealth;
+                mySlider.value = curHealth / maxHealth;
                 break;
         }
     }

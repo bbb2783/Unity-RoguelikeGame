@@ -1,14 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class MonsterPlayerMove : MonoBehaviour
 {
     public Vector2 inputVec;
     public float speed;
-    public float playerHealth;
-    public float playerMaxHealth;
 
 
     Rigidbody2D rigid;
@@ -29,5 +26,19 @@ public class MonsterPlayerMove : MonoBehaviour
     {
         Vector2 nextVec = inputVec.normalized * speed * Time.fixedDeltaTime;
         rigid.MovePosition(rigid.position + nextVec);//위치
+    }
+
+    void OnCollisionStay2D(Collision2D collision)
+    {
+        if(!MGameManager.instance.isLive) return;
+        
+        MGameManager.instance.playerHealth -= Time.deltaTime * 20;
+
+        if(MGameManager.instance.playerHealth < 0)
+        {
+            for(int index=2; index<transform.childCount; index++){
+                transform.GetChild(index).gameObject.SetActive(false);
+            }
+        }
     }
 }
