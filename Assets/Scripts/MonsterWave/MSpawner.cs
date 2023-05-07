@@ -7,7 +7,7 @@ public class MSpawner : MonoBehaviour
     public Transform[] MSPoint;
     public SpawnData[] SpawnData;
 
-    int spawnLevel;
+    public int spawnLevel;
     float MTimer;
 
     void Awake()
@@ -28,9 +28,26 @@ public class MSpawner : MonoBehaviour
 
     void MSpawn()//몬스터 스폰
     {
-        GameObject MonsterZombieMove = MGameManager.instance.MonsterPool.GetZombie(spawnLevel);
+        if(spawnLevel==0)
+        {
+            GameObject MonsterZombieMove = MGameManager.instance.MonsterPool.GetZombie(spawnLevel);
+            MonsterZombieMove.transform.position = MSPoint[Random.Range(1,MSPoint.Length)].position;
+            MonsterZombieMove.GetComponent<MonsterZombieMove>().Init(SpawnData[spawnLevel]);
+        }
+        else if(spawnLevel==1)
+        {
+            GameObject MonsterZombieMove = MGameManager.instance.MonsterPool.GetZombie(spawnLevel);
+            GameObject MonsterZombieMove2 = MGameManager.instance.MonsterPool.GetZombie(spawnLevel-1);
+            MonsterZombieMove.transform.position = MSPoint[Random.Range(1,MSPoint.Length)].position;
+            MonsterZombieMove2.transform.position = MSPoint[Random.Range(1,MSPoint.Length)].position;
+            MonsterZombieMove.GetComponent<MonsterZombieMove>().Init(SpawnData[spawnLevel]);
+            MonsterZombieMove2.GetComponent<MonsterZombieMove>().Init(SpawnData[spawnLevel-1]);
+        }
+        else {return;}
+        
+        /*GameObject MonsterZombieMove = MGameManager.instance.MonsterPool.GetZombie(spawnLevel);
         MonsterZombieMove.transform.position = MSPoint[Random.Range(1,MSPoint.Length)].position;
-        MonsterZombieMove.GetComponent<MonsterZombieMove>().Init(SpawnData[spawnLevel]);
+        MonsterZombieMove.GetComponent<MonsterZombieMove>().Init(SpawnData[spawnLevel]);*/
     }
 }
 
