@@ -6,6 +6,8 @@ public class FieldItem : MonoBehaviour
 {
 
     public Item item;
+    public bool isCollected; // 추가된 변수
+
     public SpriteRenderer image;
 
     public void SetItem(Item _item)

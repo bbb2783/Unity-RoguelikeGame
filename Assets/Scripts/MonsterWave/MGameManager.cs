@@ -6,11 +6,16 @@ public class MGameManager : MonoBehaviour
 {
     public static MGameManager instance;
     
+    [Header("# Game control")]
     public float gameTime;
     public float maxGameTime = 2*10f;
+    public bool isLive;
 
+    [Header("# Player control")]
     public MonsterPlayerMove player;
     public MPoolManager MonsterPool;
+    public float playerHealth;
+    public float playerMaxHealth = 200;
 
     void Awake()
     {
