@@ -62,7 +62,7 @@ public class MonsterZombieMove : MonoBehaviour
         if (!collision.CompareTag("Bullet")) return; //총알과 충돌한게 아니면 리턴
 
         zombieHealth -= collision.GetComponent<MBullet>().BDamage;
-        StartCoroutine(KnockBack());
+        //StartCoroutine(KnockBack());
 
         if (zombieHealth > 0)
         {
@@ -74,13 +74,13 @@ public class MonsterZombieMove : MonoBehaviour
             Dead();
         }
 
-        IEnumerator KnockBack()
+        /*IEnumerator KnockBack()
         {
             yield return wait; //다음 하나의 물리 프레임 딜레이
             Vector3 playerPos = MGameManager.instance.player.transform.position;
             Vector3 dirVec = transform.position = playerPos;
             rigid.AddForce(dirVec.normalized *3, ForceMode2D.Impulse);
-        }
+        }*/
 
         void Dead()
         {

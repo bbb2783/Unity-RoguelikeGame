@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MonsterScene.unity
     guid: 40db00b187450fb4fb01238cfe038f9c
+  - enabled: 1
+    path: Assets/Scenes/Main.unity
+    guid: fc198e6805c9bed41ac4ab89f938220b
+  - enabled: 1
+    path: Assets/Scenes/MainLab.unity
+    guid: b5b4ddec4eff68f4bbee336389446f6f
   m_configObjects: {}
