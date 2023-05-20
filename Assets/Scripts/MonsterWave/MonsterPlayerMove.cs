@@ -40,5 +40,18 @@ public class MonsterPlayerMove : MonoBehaviour
                 transform.GetChild(index).gameObject.SetActive(false);
             }
         }
+
+        //아이템 상호작용
+        if (collision.gameObject.name == "Hill(Clone)") {
+    
+            collision.gameObject.SetActive(false);	//Hill Object 비활성화            
+            MGameManager.instance.playerHealth += 50;
+        }
+        if (collision.gameObject.name == "Booster(Clone)") {
+            collision.gameObject.SetActive(false);	//Hill Object 비활성화
+            /*
+            	상호작용
+            */
+        }
     }
 }

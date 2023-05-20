@@ -74,14 +74,6 @@ public class MonsterZombieMove : MonoBehaviour
             Dead();
         }
 
-        /*IEnumerator KnockBack()
-        {
-            yield return wait; //다음 하나의 물리 프레임 딜레이
-            Vector3 playerPos = MGameManager.instance.player.transform.position;
-            Vector3 dirVec = transform.position = playerPos;
-            rigid.AddForce(dirVec.normalized *3, ForceMode2D.Impulse);
-        }*/
-
         void Dead()
         {
             gameObject.SetActive(false);
