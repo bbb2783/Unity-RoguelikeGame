@@ -4,37 +4,45 @@ using UnityEngine.SceneManagement;
 public class UIManager : MonoBehaviour
 {
     public GameObject ui;
+    private bool isUIVisible = false;
 
     public void MoveToNextScene()
     {
-        SceneManager.LoadScene("MonsterScene");
+        // 필드 아이템이 모두 수집되었는지 확인
+        bool allItemsCollected = true;
+        FieldItem[] fieldItems = FindObjectsOfType<FieldItem>();
+        foreach (FieldItem item in fieldItems)
+        {
+            if (!item.isCollected)
+            {
+                allItemsCollected = false;
+                break;
+            }
+        }
+
+        if (allItemsCollected)
+        {
+            SceneManager.LoadScene("MonsterScene");
+        }
+        else
+        {
+            SceneManager.LoadScene("Main");
+        }
     }
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (ui.activeSelf)
+            if (isUIVisible)
             {
                 ui.SetActive(false);
+                isUIVisible = false;
             }
             else
             {
-                // Check if all the field items have been collected
-                bool allItemsCollected = true;
-                foreach (FieldItem item in FindObjectsOfType<FieldItem>())
-                {
-                    if (!item.isCollected)
-                    {
-                        allItemsCollected = false;
-                        break;
-                    }
-                }
-
-                if (allItemsCollected)
-                {
-                    ui.SetActive(true);
-                }
+                ui.SetActive(true);
+                isUIVisible = true;
             }
         }
     }
