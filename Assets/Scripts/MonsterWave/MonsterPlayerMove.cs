@@ -7,19 +7,50 @@ public class MonsterPlayerMove : MonoBehaviour
     public Vector2 inputVec;
     public float speed;
 
+    private Vector2 mousePos;//마우스 값 받아옴
+    private Animator anim; //for 애니메이션 제어
+
+    private float scaleX;
+    private float scaleY;
+    private float scaleZ;
 
     Rigidbody2D rigid;
 
+    void start()
+    {
+        anim = GetComponent<Animator>();
+    }
 
     void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
+        scaleX = transform.localScale.x;
+        scaleY = transform.localScale.y;
+        scaleZ = transform.localScale.z;
     }
 
     void Update()
     {
         inputVec.x = Input.GetAxisRaw("Horizontal");
         inputVec.y = Input.GetAxisRaw("Vertical");
+
+        mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        if(mousePos.x < rigid.position.x)
+        {
+            transform.localScale = new Vector3(scaleX, scaleY, scaleZ);
+        }
+        else transform.localScale = new Vector3(-scaleX, scaleY, scaleZ);
+        /*if(inputVec.magnitude > 0f)
+        {
+            anim.SetBool("isWalk",true);
+        }
+        else 
+        {
+            anim.SetBool("isWalk",false);
+        }*/
+
+        
+        
     }
 
     void FixedUpdate()
@@ -45,7 +76,15 @@ public class MonsterPlayerMove : MonoBehaviour
         if (collision.gameObject.name == "Hill(Clone)") {
     
             collision.gameObject.SetActive(false);	//Hill Object 비활성화            
-            MGameManager.instance.playerHealth += 50;
+            if(MGameManager.instance.playerHealth <= 150)
+            {
+                MGameManager.instance.playerHealth += 50;
+            }
+            else
+            {
+                MGameManager.instance.playerHealth = 200;
+            }
+            
         }
         if (collision.gameObject.name == "Booster(Clone)") {
             collision.gameObject.SetActive(false);	//Hill Object 비활성화
