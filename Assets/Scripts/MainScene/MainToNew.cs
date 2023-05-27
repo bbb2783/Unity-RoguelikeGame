@@ -10,7 +10,7 @@ public class MainToNew : MonoBehaviour
         switch (this.gameObject.name)
         {
             case "NewGame":
-                SceneManager.LoadScene("MainLab");
+                SceneManager.LoadScene("TutorialDialogue");
                 break;
         }
     }

@@ -32,9 +32,9 @@ public class DialogueParser : MonoBehaviour
                 }
             }while(row[0].ToString() == "");
 
-            //dialogue.contexts = contextList.ToArray();
+            dialogue.contexts = contextList.ToArray();
 
-            //dialogueList.Add(dialogue);
+            dialogueList.Add(dialogue);
 
         }
 
