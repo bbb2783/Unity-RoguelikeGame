@@ -10,12 +10,12 @@ public class PlantDatabase : MonoBehaviour
     {
         instance = this;
     }
-
+    
     public List<Item> itemDB = new List<Item>();
 
     public GameObject fieldItemPrefab;
     public Vector3[] pos;
-    private List<GameObject> spawnedItems = new List<GameObject>();
+    public List<GameObject> spawnedItems = new List<GameObject>();
 
     private void Start()
     {
