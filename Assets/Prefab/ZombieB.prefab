@@ -147,6 +147,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
-  zombieHealth: 30
-  zombieMaxHealth: 30
+  zombieHealth: 60
+  zombieMaxHealth: 60
   target: {fileID: 0}

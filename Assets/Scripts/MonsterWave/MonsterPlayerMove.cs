@@ -59,11 +59,14 @@ public class MonsterPlayerMove : MonoBehaviour
         rigid.MovePosition(rigid.position + nextVec);//위치
     }
 
-    void OnCollisionStay2D(Collision2D collision)
+    
+
+
+    void OnCollisionStay2D(Collision2D collision)//플레이어 체력관리
     {
         if(!MGameManager.instance.isLive) return;
         
-        MGameManager.instance.playerHealth -= Time.deltaTime * 20;
+        MGameManager.instance.playerHealth -= Time.deltaTime * 20;    
 
         if(MGameManager.instance.playerHealth < 0)
         {

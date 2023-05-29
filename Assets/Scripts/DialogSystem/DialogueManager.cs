@@ -13,7 +13,7 @@ public class DialogueManager : MonoBehaviour
 
     Dialogue[] dialogues;
 
-    bool isDialogue = false;
+    //bool isDialogue = false;
 
     public void ShowDialogue(Dialogue[] p_dialogues)
     {
