@@ -14,16 +14,24 @@ public class MonsterZombieMove : MonoBehaviour
 
     bool isLive;
 
+    private float scaleX;
+    private float scaleY;
+    private float scaleZ;
+
     Rigidbody2D rigid;
     //Animator anime;
-    SpriteRenderer spriter;
+    //SpriteRenderer spriter;
 
     void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
         //anime = GetComponent<Animator>();
-        spriter = GetComponent<SpriteRenderer>();
+        //spriter = GetComponent<SpriteRenderer>();
         wait = new WaitForFixedUpdate();
+
+        scaleX = transform.localScale.x;
+        scaleY = transform.localScale.y;
+        scaleZ = transform.localScale.z;
     }
 
     void FixedUpdate()
@@ -39,7 +47,12 @@ public class MonsterZombieMove : MonoBehaviour
 
     void LateUpdate()
     {
-        spriter.flipX = target.position.x < rigid.position.x;
+        //spriter.flipX = target.position.x < rigid.position.x;
+        if(target.position.x < rigid.position.x)
+        {
+            transform.localScale = new Vector3(scaleX, scaleY, scaleZ);
+        }
+        else transform.localScale = new Vector3(-scaleX, scaleY, scaleZ);
     }
 
     void OnEnable()
