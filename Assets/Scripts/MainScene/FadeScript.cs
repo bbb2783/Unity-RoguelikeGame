@@ -1,29 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class MainToNew : MonoBehaviour
+public class FadeScript : MonoBehaviour
 {
     public Image Panel;
     float time = 0f;
     float F_time = 1f;
-    
-    public void ChangeSceneBtn()
+
+    public void Fade()
     {
         StartCoroutine(FadeFlow());
-
-        Invoke("T_SceneChange", 1f);
-
-        /*switch (this.gameObject.name)
-        {
-            case "NewGame":
-                SceneManager.LoadScene("TutorialDialogue");
-                break;
-        }*/
     }
-
     IEnumerator FadeFlow()
     {
         Panel.gameObject.SetActive(true);
@@ -37,16 +26,4 @@ public class MainToNew : MonoBehaviour
         }
         yield return null;
     }
-
-    public void T_SceneChange()
-    {
-        switch (this.gameObject.name)
-        {
-            case "NewGame":
-                SceneManager.LoadScene("TutorialDialogue");
-                break;
-        }
-    }
-
-    
 }
