@@ -37,8 +37,6 @@ public class MGun : MonoBehaviour
 
         if(angle < 1.5 && angle > -1.5)
         {
-            rend.flipX = true;
-            rend.flipY = true;
             angle = Mathf.Atan2(mousePos.y - transform.position.y, mousePos.x - transform.position.x); 
             transform.rotation = Quaternion.Lerp(transform.rotation,
             Quaternion.AngleAxis(angle * Mathf.Rad2Deg, Vector3.forward), turnSpd * Time.deltaTime);
