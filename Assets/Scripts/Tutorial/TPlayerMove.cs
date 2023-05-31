@@ -15,13 +15,9 @@ public class TPlayerMove : MonoBehaviour
 
     Rigidbody2D rigid;
 
-    void start()
-    {
-        anim = GetComponent<Animator>();
-    }
-
     void Awake()
     {
+        anim = GetComponent<Animator>();
         rigid = GetComponent<Rigidbody2D>();
         scaleX = transform.localScale.x;
         scaleY = transform.localScale.y;
@@ -41,14 +37,11 @@ public class TPlayerMove : MonoBehaviour
         {
             transform.localScale = new Vector3(scaleX, scaleY, scaleZ);
         }
-        /*if(inputVec.magnitude > 0f)
+        if (inputVec.x != 0 || inputVec.y != 0)
         {
-            anim.SetBool("isWalk",true);
+            anim.SetBool("isWalk", true);
         }
-        else 
-        {
-            anim.SetBool("isWalk",false);
-        }*/
+        else {anim.SetBool("isWalk", false);}
     }
 
     void FixedUpdate()
