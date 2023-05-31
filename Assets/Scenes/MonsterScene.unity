@@ -2067,7 +2067,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 0.7326586
+  m_Length: 0.73265857
   m_ChildTransform: {fileID: 263714488}
   m_AttachedIK: {fileID: 0}
 --- !u!1 &983036662

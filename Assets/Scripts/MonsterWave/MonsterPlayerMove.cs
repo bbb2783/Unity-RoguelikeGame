@@ -18,11 +18,12 @@ public class MonsterPlayerMove : MonoBehaviour
 
     void start()
     {
-        anim = GetComponent<Animator>();
+        //anim = GetComponent<Animator>();
     }
 
     void Awake()
     {
+        anim = GetComponent<Animator>();
         rigid = GetComponent<Rigidbody2D>();
         scaleX = transform.localScale.x;
         scaleY = transform.localScale.y;
@@ -40,16 +41,12 @@ public class MonsterPlayerMove : MonoBehaviour
             transform.localScale = new Vector3(scaleX, scaleY, scaleZ);
         }
         else transform.localScale = new Vector3(-scaleX, scaleY, scaleZ);
-        /*if(inputVec.magnitude > 0f)
-        {
-            anim.SetBool("isWalk",true);
-        }
-        else 
-        {
-            anim.SetBool("isWalk",false);
-        }*/
-
         
+        if (inputVec.x != 0 || inputVec.y != 0/*Input.GetKeyDown(KeyCode.W)*/)
+        {
+            anim.SetBool("isWalk", true);
+        }
+        else {anim.SetBool("isWalk", false);}
         
     }
 
