@@ -8,7 +8,7 @@ public class MGameManager : MonoBehaviour
     
     [Header("# Game control")]
     public float gameTime;
-    public float maxGameTime = 2*10f;
+    public float maxGameTime = 2*150f;
     public bool isLive;
 
     [Header("# Player control")]

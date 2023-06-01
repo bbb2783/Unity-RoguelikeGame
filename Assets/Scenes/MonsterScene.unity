@@ -1139,7 +1139,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputVec: {x: 0, y: 0}
-  speed: 5
+  speed: 6
 --- !u!95 &541926021
 Animator:
   serializedVersion: 4
@@ -1577,7 +1577,7 @@ Canvas:
   m_GameObject: {fileID: 706917774}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 1553825577}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -2275,7 +2275,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameTime: 0
-  maxGameTime: 20
+  maxGameTime: 300
   isLive: 1
   player: {fileID: 541926020}
   MonsterPool: {fileID: 144595663}
@@ -3293,7 +3293,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 541926019}
-  speed: 5
+  speed: 7
 --- !u!1 &1558857665
 GameObject:
   m_ObjectHideFlags: 0

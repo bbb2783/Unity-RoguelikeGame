@@ -15,13 +15,6 @@ public class MainToNew : MonoBehaviour
         StartCoroutine(FadeFlow());
 
         Invoke("T_SceneChange", 1f);
-
-        /*switch (this.gameObject.name)
-        {
-            case "NewGame":
-                SceneManager.LoadScene("TutorialDialogue");
-                break;
-        }*/
     }
 
     IEnumerator FadeFlow()
@@ -47,6 +40,4 @@ public class MainToNew : MonoBehaviour
                 break;
         }
     }
-
-    
 }
