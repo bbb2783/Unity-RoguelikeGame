@@ -63,7 +63,10 @@ public class MonsterPlayerMove : MonoBehaviour
     {
         if(!MGameManager.instance.isLive) return;
         
-        MGameManager.instance.playerHealth -= Time.deltaTime * 20;    
+        if (collision.gameObject.name == "ForestZombieG(Clone)"||collision.gameObject.name == "ForestZombieR(Clone)") 
+        {
+            MGameManager.instance.playerHealth -= Time.deltaTime * 20;    
+        }
 
         if(MGameManager.instance.playerHealth < 0)
         {

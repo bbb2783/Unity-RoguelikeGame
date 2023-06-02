@@ -9,6 +9,7 @@ TagManager:
   - Bullet
   - Monster
   - wall
+  - FieldObject
   layers:
   - Default
   - TransparentFX

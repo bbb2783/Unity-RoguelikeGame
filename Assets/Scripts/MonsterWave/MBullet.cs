@@ -28,7 +28,7 @@ public class MBullet : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        if (collision.tag.Equals("wall"))
+        if (collision.tag.Equals("wall")||collision.tag.Equals("FieldObject"))
         {
             Destroy(gameObject);
         }
