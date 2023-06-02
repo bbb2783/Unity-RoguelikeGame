@@ -19,7 +19,7 @@ public class PlantDatabase : MonoBehaviour
 
     private void Start()
     {
-        List<int> randomIndexes = GenerateUniqueRandomNumbers(0, pos.Length, 5);
+        List<int> randomIndexes = GenerateUniqueRandomNumbers(0, pos.Length, 10);
         for (int i = 0; i < randomIndexes.Count; i++)
         {
             int index = randomIndexes[i];
