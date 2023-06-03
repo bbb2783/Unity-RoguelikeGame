@@ -7,26 +7,24 @@ public class MonsterZombieMove : MonoBehaviour
     public float speed;
     public float zombieHealth;
     public float zombieMaxHealth;
-    //public RuntimeAnimatorController[] animacon;
     WaitForFixedUpdate wait;
 
     public Rigidbody2D target;
 
     bool isLive;
 
+    private Animator anim; //for 애니메이션 제어
+
     private float scaleX;
     private float scaleY;
     private float scaleZ;
 
     Rigidbody2D rigid;
-    //Animator anime;
-    //SpriteRenderer spriter;
 
     void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
-        //anime = GetComponent<Animator>();
-        //spriter = GetComponent<SpriteRenderer>();
+        anim = GetComponent<Animator>();
         wait = new WaitForFixedUpdate();
 
         scaleX = transform.localScale.x;
@@ -38,6 +36,9 @@ public class MonsterZombieMove : MonoBehaviour
     {
         if(!isLive)
             return;
+
+        if (zombieHealth <= 0)
+            {return;}    
         
         Vector2 dirVec = target.position - rigid.position;
         Vector2 nextVec = dirVec.normalized * speed * Time.fixedDeltaTime;
@@ -47,7 +48,6 @@ public class MonsterZombieMove : MonoBehaviour
 
     void LateUpdate()
     {
-        //spriter.flipX = target.position.x < rigid.position.x;
         if(target.position.x < rigid.position.x)
         {
             transform.localScale = new Vector3(scaleX, scaleY, scaleZ);
@@ -64,7 +64,6 @@ public class MonsterZombieMove : MonoBehaviour
 
     public void Init(SpawnData data)
     {
-        //anime.runtimeAnimatorController = animacon[data.spriteType];
         speed = data.zombieSpeed;
         zombieMaxHealth = data.zombieHealth;
         zombieHealth = data.zombieHealth;
@@ -75,7 +74,6 @@ public class MonsterZombieMove : MonoBehaviour
         if (!collision.CompareTag("Bullet")) return; //총알과 충돌한게 아니면 리턴
 
         zombieHealth -= collision.GetComponent<MBullet>().BDamage;
-        //StartCoroutine(KnockBack());
 
         if (zombieHealth > 0)
         {
@@ -83,13 +81,14 @@ public class MonsterZombieMove : MonoBehaviour
         }
         else 
         {
-            //die
-            Dead();
+            anim.SetTrigger("isDie");
         }
 
-        void Dead()
+        
+    }
+
+    void Dead()
         {
             gameObject.SetActive(false);
         }
-    }
 }

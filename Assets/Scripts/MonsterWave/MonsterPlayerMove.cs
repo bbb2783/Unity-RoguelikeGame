@@ -42,7 +42,7 @@ public class MonsterPlayerMove : MonoBehaviour
         }
         else transform.localScale = new Vector3(-scaleX, scaleY, scaleZ);
         
-        if (inputVec.x != 0 || inputVec.y != 0/*Input.GetKeyDown(KeyCode.W)*/)
+        if (inputVec.x != 0 || inputVec.y != 0)
         {
             anim.SetBool("isWalk", true);
         }
@@ -65,6 +65,7 @@ public class MonsterPlayerMove : MonoBehaviour
         
         if (collision.gameObject.name == "ForestZombieG(Clone)"||collision.gameObject.name == "ForestZombieR(Clone)") 
         {
+            anim.SetTrigger("isHit");
             MGameManager.instance.playerHealth -= Time.deltaTime * 20;    
         }
 
