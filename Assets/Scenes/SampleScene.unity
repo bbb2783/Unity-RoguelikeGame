@@ -16074,13 +16074,9 @@ MonoBehaviour:
   speed: 6
   pickupKey: 277
   pickupRadius: 1
-<<<<<<< Updated upstream
-  pickupText: {fileID: 1059552768}
-=======
   pickupDelay: 2
   pickupText: {fileID: 1059552768}
   pickupTextDelay: {fileID: 1444944421}
->>>>>>> Stashed changes
 --- !u!114 &8968209965803520941
 MonoBehaviour:
   m_ObjectHideFlags: 0
