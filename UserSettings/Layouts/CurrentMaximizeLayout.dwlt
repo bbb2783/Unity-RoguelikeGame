@@ -186,8 +186,8 @@ MonoBehaviour:
     y: 0
     width: 363
     height: 561
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 6}
   m_Panes:
   - {fileID: 6}
@@ -224,9 +224,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: dcc9ffff
-      m_LastClickedID: -13860
-      m_ExpandedIDs: dcc9fffff0c9ffffe4dcffff12f4ffff14f8ffff2cfbffff8e66000096660000d266000052690000
+      m_SelectedIDs: 62630000
+      m_LastClickedID: 0
+      m_ExpandedIDs: 105cffff4270ffff8070ffff4071ffffea96ffff3897ffff8e97ffff2098ffff5e98ffffc498ffffa299ffffd2c9ffffdcc9ffffeec9fffff0c9ffffe4dcffff12f4ffff14f8ffff2cfbffff8e66000096660000d2660000526900000a9a00006eae00008cae000088af000098af0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -525,9 +525,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -2.888786, y: 1.7886944, z: -1.6540425}
+    m_Target: {x: 1.8646353, y: 2.0637007, z: -3.592426}
     speed: 2
-    m_Value: {x: -2.888786, y: 1.7886944, z: -1.6540425}
+    m_Value: {x: 1.8646353, y: 2.0637007, z: -3.592426}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -578,9 +578,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 4.4806967
+    m_Target: 5.7762294
     speed: 2
-    m_Value: 4.4806967
+    m_Value: 5.7762294
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -639,6 +639,7 @@ MonoBehaviour:
     - {fileID: -3853511300189317483, guid: f4c54b18b4c322d458a699156c1364da, type: 2}
     - {fileID: -8897825512062266925, guid: abf4a984ceb1ae14b805e31bedbc612b, type: 2}
     - {fileID: 6294162129517381258, guid: fde11842d306e6449a6acce1c8813ad6, type: 2}
+    - {fileID: -7807201924015939864, guid: 78f169ee1e3e8724890e18bf728dc33b, type: 2}
     m_ValueSerializationHelper:
     - e00: 0.84320986
       e01: 0
@@ -704,10 +705,26 @@ MonoBehaviour:
       e31: 0
       e32: 0
       e33: 1
+    - e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
   m_PreviewAnimator: {fileID: 0}
-  m_AnimatorController: {fileID: 9100000, guid: fde11842d306e6449a6acce1c8813ad6, type: 2}
+  m_AnimatorController: {fileID: 9100000, guid: 78f169ee1e3e8724890e18bf728dc33b, type: 2}
   m_BreadCrumbs:
-  - m_Target: {fileID: 6294162129517381258, guid: fde11842d306e6449a6acce1c8813ad6, type: 2}
+  - m_Target: {fileID: -7807201924015939864, guid: 78f169ee1e3e8724890e18bf728dc33b, type: 2}
     m_ScrollPosition: {x: 0, y: 0}
   stateMachineGraph: {fileID: 0}
   stateMachineGraphGUI: {fileID: 0}
@@ -747,7 +764,7 @@ MonoBehaviour:
   - {fileID: 12}
   - {fileID: 13}
   m_Selected: 0
-  m_LastSelected: 2
+  m_LastSelected: 1
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -789,22 +806,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/playerTex
+    - Assets/Scenes
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/playerTex
+  - Assets/Scenes
   m_LastFoldersGridSize: -1
   m_LastProjectPath: "C:\\Users\\YeonGyeong\\Desktop\\\uD558\uD504\uC14B\\project\\Unity-RoguelikeGame"
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 56630000
-    m_LastClickedID: 25430
-    m_ExpandedIDs: 00000000e462000000ca9a3b
+    scrollPos: {x: 0, y: 251}
+    m_SelectedIDs: 5c630000
+    m_LastClickedID: 25436
+    m_ExpandedIDs: 00000000e4620000586300005e630000886a000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -857,10 +874,10 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: dcc9ffff
-    m_LastClickedInstanceID: -13860
-    m_HadKeyboardFocusLastEvent: 0
-    m_ExpandedInstanceIDs: c62300005e6900002865000032880000
+    m_SelectedInstanceIDs: 62630000
+    m_LastClickedInstanceID: 25442
+    m_HadKeyboardFocusLastEvent: 1
+    m_ExpandedInstanceIDs: c62300005e690000286500008e940000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -946,7 +963,7 @@ MonoBehaviour:
     m_SaveData: []
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 34674
+  m_LastSelectedObjectID: 40042
 --- !u!114 &14
 MonoBehaviour:
   m_ObjectHideFlags: 52
