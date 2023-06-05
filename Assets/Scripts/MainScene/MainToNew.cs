@@ -33,11 +33,6 @@ public class MainToNew : MonoBehaviour
 
     public void T_SceneChange()
     {
-        switch (this.gameObject.name)
-        {
-            case "NewGame":
-                SceneManager.LoadScene("TutorialDialogue");
-                break;
-        }
+        SceneManager.LoadScene("TutorialDialogue");
     }
 }

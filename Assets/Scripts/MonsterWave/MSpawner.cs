@@ -44,10 +44,6 @@ public class MSpawner : MonoBehaviour
             MonsterZombieMove2.GetComponent<MonsterZombieMove>().Init(SpawnData[spawnLevel-1]);
         }
         else {return;}
-        
-        /*GameObject MonsterZombieMove = MGameManager.instance.MonsterPool.GetZombie(spawnLevel);
-        MonsterZombieMove.transform.position = MSPoint[Random.Range(1,MSPoint.Length)].position;
-        MonsterZombieMove.GetComponent<MonsterZombieMove>().Init(SpawnData[spawnLevel]);*/
     }
 }
 
@@ -55,7 +51,6 @@ public class MSpawner : MonoBehaviour
 public class SpawnData
 {
     public float spawnTime;
-    //public int spriteType;
     public int zombieHealth;
     public float zombieSpeed;
 }

@@ -48,15 +48,6 @@ public class PlayerMove : MonoBehaviour
         Vector2 direction = new Vector2(horizontal, vertical);
         transform.Translate(direction * speed * Time.deltaTime);
 
-<<<<<<< Updated upstream
-        if(horizontal > 0) //방향 전환
-        {transform.localScale = new Vector3(-scaleX, scaleY, scaleZ);}
-        else if(horizontal < 0) 
-        {transform.localScale = new Vector3(scaleX, scaleY, scaleZ);}
-        if (horizontal != 0 || vertical != 0) //애니메이션 제어
-        {anim.SetBool("isWalk", true);}
-        else {anim.SetBool("isWalk", false);}
-=======
         if (horizontal > 0) //방향 전환
         { transform.localScale = new Vector3(-scaleX, scaleY, scaleZ); }
         else if (horizontal < 0)
@@ -64,7 +55,6 @@ public class PlayerMove : MonoBehaviour
         if (horizontal != 0 || vertical != 0) //애니메이션 제어
         { anim.SetBool("isWalk", true); }
         else { anim.SetBool("isWalk", false); }
->>>>>>> Stashed changes
 
         // 근처 아이템이 있을 경우
         Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, pickupRadius);

@@ -466,7 +466,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb62e9f260dfe6e439088424eeaccf28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
+  speed: 4
   zombieHealth: 60
   zombieMaxHealth: 60
   target: {fileID: 0}
