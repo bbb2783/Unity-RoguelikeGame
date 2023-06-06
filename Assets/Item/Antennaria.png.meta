@@ -76,6 +76,7 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+<<<<<<< HEAD
   - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
@@ -112,6 +113,8 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+=======
+>>>>>>> 3ed9ab45563925eb8066629914a0bac4148b8cbd
   spriteSheet:
     serializedVersion: 2
     sprites: []
@@ -119,7 +122,11 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
+<<<<<<< HEAD
     internalID: 1537655665
+=======
+    internalID: 0
+>>>>>>> 3ed9ab45563925eb8066629914a0bac4148b8cbd
     vertices: []
     indices: 
     edges: []

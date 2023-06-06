@@ -66,6 +66,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
+<<<<<<< HEAD
     maxTextureSize: 32
     resizeAlgorithm: 0
     textureFormat: -1
@@ -102,6 +103,8 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Android
+=======
+>>>>>>> 3ed9ab45563925eb8066629914a0bac4148b8cbd
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
