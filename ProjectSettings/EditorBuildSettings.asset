@@ -20,4 +20,25 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TutorialDialogue.unity
     guid: fd908be74f2082240a9d2b2a04645cc5
+  - enabled: 1
+    path: Assets/Scenes/C_City.unity
+    guid: ecb7730aa4355844da53076fff2498a7
+  - enabled: 1
+    path: Assets/Scenes/C_Forest.unity
+    guid: 4806d395fa7f6bb4ca0036ba5bc1fa66
+  - enabled: 1
+    path: Assets/Scenes/C_River.unity
+    guid: 2ece998187463df4da576b33989ff85e
+  - enabled: 1
+    path: Assets/Scenes/M_City.unity
+    guid: b715ab96ceb04424784d97745f6c2b1d
+  - enabled: 1
+    path: Assets/Scenes/M_Forest.unity
+    guid: c60daee4f6152a148bd5dcfaccb6a039
+  - enabled: 1
+    path: Assets/Scenes/M_River.unity
+    guid: 99e631afcae4e3e4ebbb5434b45e45da
+  - enabled: 1
+    path: Assets/Scenes/BadEnd1.unity
+    guid: 48cea261deb8fb541bcc2cedf36cf3b8
   m_configObjects: {}
