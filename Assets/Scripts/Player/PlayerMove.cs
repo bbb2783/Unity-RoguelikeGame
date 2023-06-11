@@ -14,6 +14,8 @@ public class PlayerMove : MonoBehaviour
     private bool isPickupDelay = false; // 딜레이 중인지 여부
     private float pickupTime = 0f; // 먹기 시작한 시간
     private Inventory inventory;
+    public AudioClip footstep;
+    public AudioClip pickingSound;
 
     [SerializeField] private Text pickupText;
     [SerializeField] private Text pickupTextDelay;
@@ -83,6 +85,7 @@ public class PlayerMove : MonoBehaviour
                 pickupText.gameObject.SetActive(false); // 기존 텍스트 비활성화
                 pickupTextDelay.gameObject.SetActive(true); // 딜레이 텍스트 활성화
                 pickupTextDelay.text = "Picking up...";
+                anim.SetTrigger("isPicking");
             }
         }
 
@@ -121,5 +124,15 @@ public class PlayerMove : MonoBehaviour
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         collectedItemCount = 0; // 씬 이동 시 collectedItemCount를 0으로 초기화
+    }
+
+    void FootStep()
+    {
+        AudioSource.PlayClipAtPoint(footstep, Camera.main.transform.position);
+    }
+
+     void PickingSound()
+    {
+        AudioSource.PlayClipAtPoint(pickingSound, Camera.main.transform.position);
     }
 }

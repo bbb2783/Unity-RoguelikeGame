@@ -6,6 +6,7 @@ public class TPlayerMove : MonoBehaviour
 {
     public Vector2 inputVec;
     public float speed;
+    public AudioClip footstep;
 
     private Animator anim; //for 애니메이션 제어
 
@@ -48,6 +49,11 @@ public class TPlayerMove : MonoBehaviour
     {
         Vector2 nextVec = inputVec.normalized * speed * Time.fixedDeltaTime;
         rigid.MovePosition(rigid.position + nextVec);//위치
+    }
+
+    void FootStep()
+    {
+        AudioSource.PlayClipAtPoint(footstep, Camera.main.transform.position);
     }
 }
 

@@ -7,14 +7,15 @@ using UnityEngine.UI;
 public class MainToNew : MonoBehaviour
 {
     public Image Panel;
+    public GameObject particle;
     float time = 0f;
     float F_time = 1f;
     
     public void ChangeSceneBtn()
     {
         StartCoroutine(FadeFlow());
-
-        Invoke("T_SceneChange", 1f);
+        particle.gameObject.SetActive(false);
+        Invoke("T_SceneChange", 3f);
     }
 
     IEnumerator FadeFlow()

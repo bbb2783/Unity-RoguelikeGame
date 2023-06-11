@@ -6,6 +6,7 @@ public class MonsterPlayerMove : MonoBehaviour
 {
     public Vector2 inputVec;
     public float speed;
+    public AudioClip footstep;
 
     private Vector2 mousePos;//마우스 값 받아옴
     private Animator anim; //for 애니메이션 제어
@@ -96,5 +97,10 @@ public class MonsterPlayerMove : MonoBehaviour
             	상호작용
             */
         }
+    }
+
+    void FootStep()
+    {
+        AudioSource.PlayClipAtPoint(footstep, Camera.main.transform.position);
     }
 }

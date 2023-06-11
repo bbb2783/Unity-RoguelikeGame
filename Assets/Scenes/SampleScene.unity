@@ -899,7 +899,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 8.304881
+  orthographic size: 12
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -16012,6 +16012,8 @@ MonoBehaviour:
   pickupKey: 277
   pickupRadius: 1
   pickupDelay: 2
+  footstep: {fileID: 8300000, guid: 65d9836027675574b8d070c5718f99c7, type: 3}
+  pickingSound: {fileID: 8300000, guid: dcd21ccd0634b2644876f832ccf12726, type: 3}
   pickupText: {fileID: 1059552768}
   pickupTextDelay: {fileID: 1444944421}
 --- !u!114 &8968209965803520941

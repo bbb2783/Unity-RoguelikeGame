@@ -25,7 +25,7 @@ public class MmonsterToCollect : MonoBehaviour
         if((MSpawner.GetComponent<MSpawner>().spawnLevel==2)
             &&(MGameManager.GetComponent<MGameManager>().playerHealth>0))
         {
-            SceneManager.LoadScene("SampleScene");
+            SceneManager.LoadScene("D_forest_2");
         }
     }
 }

@@ -14,7 +14,7 @@ public class StartMission : MonoBehaviour
     {
         StartCoroutine(FadeFlow());
         
-        Invoke("ML_SceneChange", 1f);
+        Invoke("ML_SceneChange", 3f);
     }
 
     IEnumerator FadeFlow()
@@ -33,6 +33,6 @@ public class StartMission : MonoBehaviour
 
     public void ML_SceneChange()
     {
-        SceneManager.LoadScene("MonsterScene");
+        SceneManager.LoadScene("D_forest_1");
     }
 }

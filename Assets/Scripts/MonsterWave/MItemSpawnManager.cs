@@ -13,7 +13,7 @@ public class MItemSpawnManager : MonoBehaviour
     void Start()
     {
         area = GetComponent<BoxCollider2D>();
-        StartCoroutine("Spawn", 5);
+        StartCoroutine("Spawn", 10);
     }
 
     //게임 오브젝트를 복제하여 scene에 추가
@@ -39,7 +39,7 @@ public class MItemSpawnManager : MonoBehaviour
 
         ItemList.Clear();           //bookList 비우기
         area.enabled = true;
-        StartCoroutine("Spawn", 5);    //책 다시 스폰
+        StartCoroutine("Spawn", 10);    //책 다시 스폰
 
     }
 

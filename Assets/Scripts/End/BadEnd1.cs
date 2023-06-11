@@ -18,7 +18,6 @@ public class BadEnd1 : MonoBehaviour
     int checkNum = 0;
 
     string Dialogue;
-    int setNum = 0; //DialogueSet 인덱스 관리
 
     void Start()
     {
