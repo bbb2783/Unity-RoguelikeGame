@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3336836691870630359}
   - component: {fileID: 3336836691870630352}
   - component: {fileID: 8183637261968148850}
+  - component: {fileID: 7717613575942673727}
   m_Layer: 0
   m_Name: Hill
   m_TagString: Untagged
@@ -111,3 +112,14 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.9916851, y: 0.8634598}
   m_EdgeRadius: 0
+--- !u!210 &7717613575942673727
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3336836691870630353}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0

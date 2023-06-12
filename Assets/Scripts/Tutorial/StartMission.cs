@@ -7,13 +7,15 @@ using UnityEngine.UI;
 public class StartMission : MonoBehaviour
 {
     public Image Panel;
+    public AudioSource warp;
+
     float time = 0f;
     float F_time = 1f;
     
     public void TTM_SceneChange()
     {
         StartCoroutine(FadeFlow());
-        
+        warp.Play();
         Invoke("ML_SceneChange", 3f);
     }
 

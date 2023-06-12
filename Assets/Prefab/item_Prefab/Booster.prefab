@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4482600958060202097}
   - component: {fileID: 4482600958060202096}
   - component: {fileID: 4204390109968747029}
+  - component: {fileID: 7519457435748800522}
   m_Layer: 0
   m_Name: Booster
   m_TagString: Untagged
@@ -111,3 +112,14 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.96837115, y: 0.6769503}
   m_EdgeRadius: 0
+--- !u!210 &7519457435748800522
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4482600958060202099}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0

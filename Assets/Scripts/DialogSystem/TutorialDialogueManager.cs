@@ -35,8 +35,8 @@ public class TutorialDialogueManager : MonoBehaviour
             "다른건… 변이체에 대한거야.","바이러스 때문에 생겨난 변이체들이 주변을 초토화 하던 시기야. 전송이 되자마자 몰려들거야.",//10-14
             "미리 방어선을 쳐 둘 수 있으면 좋겠지만…", "네가 전송될 포인트를 완벽히 알 방법이 없어.", "적어도 5분정도는 방어선을 칠 때까지 전투를 해야해.",
             "오케이~ 그동안 훈련을 얼마나 열심히 받았는데.","걱정하지마. 샘플 그냥 아주 팍팍 보낼게!",//15-16
-            "5개밖에 못보낸다니까. 까불지말고. ...조심히 갔다와.",//17
-            "어차피 네가 열심히 서포트해줄거잖아? 둘다 힘내보자고."//18
+            "5개밖에 못보낸다니까. 까불지말고.", "...조심히 갔다와.",//17-18
+            "어차피 네가 열심히 서포트해줄거잖아? 둘 다 힘내보자고."//19
 
         };
     string Dialogue;
@@ -76,7 +76,7 @@ public class TutorialDialogueManager : MonoBehaviour
                         Tao.gameObject.SetActive(false); Rea.gameObject.SetActive(true); NameBox.text = NameSet[1]; break;
                     case 17:
                         Tao.gameObject.SetActive(true); Rea.gameObject.SetActive(false); NameBox.text = NameSet[2]; break;
-                    case 18:
+                    case 19:
                         Tao.gameObject.SetActive(false); Rea.gameObject.SetActive(true); NameBox.text = NameSet[1]; break;
                 }
             }
