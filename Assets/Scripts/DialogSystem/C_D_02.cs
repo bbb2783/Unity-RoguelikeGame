@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class F_D_01 : MonoBehaviour
+public class C_D_02 : MonoBehaviour
 {
     public Text TextBox;
     public Text NameBox;
@@ -19,7 +19,7 @@ public class F_D_01 : MonoBehaviour
 
     float time = 0f;
     float F_time = 1f;
-    int checkNum = 1;
+    int checkNum = 0;
 
     string[] NameSet = //이름세트
         {
@@ -28,26 +28,30 @@ public class F_D_01 : MonoBehaviour
     
     string[] DialogueSet = //대화세트
         {
-            "휴~ 이거 만만치가 않은데.", "탐사대 태오, 도착 보고 합니다!", //0-1
-            "확인했습니다. 거긴 어때?",//2
-            "여기? ",
-            "...와",
-            "이게... 진짜 식물이라는거구나, 싶네...",
-            "윽,그런데 여기 꼴이 장난아닌걸.",//3-6
-            "지금 네가 있는 시대는 자원전쟁이 한창일때니까.", 
-            "전쟁으로 개발이 중단되고 엉망이 된 상태라 장애물들을 조심해야해.",//7-8
-            "알았어. 그럼 어디…",//9
-            "비상. 비상. 미확인 개체 다수 접근중.",
-            "전투모드로 전환합니다.",//10-11
-            "뭐야? 벌써?",//12
-            "이런… 준비해 태오! 변이체들이 몰려오고 있어!"//13
-
+            "헉...헉... 쟤들 왜저렇게 빨라!",//0
+            "마지막까지 상상을 초월하네. 다른 곳과는 변이가 다른 방식으로 일어났나봐.",
+            "연구해볼 가치가 있겠어.",//1-2
+            "내 걱정도 해줘! 나 아파~!",//3
+            "생체 체크. 혈압 정상. 오른쪽 어깨 타박상. 그 외 정상. 체력 보존을 위해 10분간 휴식을 권장합니다.",//4
+            "그… 그래…",//5
+            "...", 
+            "…너도 수고 많았어. 얼른 샘플 채집하고 돌아와.",//6-7
+            "...!!",
+            "그래! 1호! 빨리 가자!"//8-9
         };
     string Dialogue;
     int setNum = 0; //DialogueSet 인덱스 관리
 
-    void Start()
+    void Awake()
     {
+        Panel.gameObject.SetActive(true);
+        StartCoroutine(All_FadeIn());
+        Invoke("D_Start", 1f);
+    }
+    
+    void D_Start()
+    {
+        checkNum = 1;
         NameBox.text = NameSet[1];
         
         Dialogue = DialogueSet[setNum];
@@ -68,28 +72,25 @@ public class F_D_01 : MonoBehaviour
                 
                 switch(setNum)
                 {
-                    case 1:
-                        StartCoroutine(FadeOut()); NameBox.text = NameSet[1]; break;
-                    case 2:
-                        Tao.gameObject.SetActive(true); NameBox.text = NameSet[2]; break;
-                    case 3:
-                        Tao.gameObject.SetActive(false); Rea.gameObject.SetActive(true); NameBox.text = NameSet[1]; break;
-                    case 7:
+                    case 1://연구원
                         Tao.gameObject.SetActive(true); Rea.gameObject.SetActive(false); NameBox.text = NameSet[2]; break;
-                    case 9:
+                    case 3://태오
                         Tao.gameObject.SetActive(false); Rea.gameObject.SetActive(true); NameBox.text = NameSet[1]; break;
-                    case 10:
+                    case 4://1호
                         Tao.gameObject.SetActive(true); Rea.gameObject.SetActive(false); ReaM.gameObject.SetActive(false); NameBox.text = NameSet[0]; break;
-                    case 12:
+                    case 5://태오
                         Tao.gameObject.SetActive(false); TO01.gameObject.SetActive(true); NameBox.text = NameSet[1]; break;
-                    case 13:
-                        Tao.gameObject.SetActive(true); ReaM.gameObject.SetActive(true);NameBox.text = NameSet[1]; break;
+                    case 6://연구원
+                        Tao.gameObject.SetActive(true); ReaM.gameObject.SetActive(true); NameBox.text = NameSet[2]; break;
+                    case 8://태오
+                        Tao.gameObject.SetActive(false); Rea.gameObject.SetActive(true); NameBox.text = NameSet[1]; break;
+                    
                 }
             }
             else
             {
-                StartCoroutine(FadeFlow());//화면 암전 후 씬 전환
-                Invoke("TD_SceneChange", 1f);
+                StartCoroutine(All_FadeOut());//화면 암전 후 씬 전환
+                Invoke("SceneChange", 1f);
             }
             
         }
@@ -108,7 +109,7 @@ public class F_D_01 : MonoBehaviour
         checkNum = 1;
     }
 
-    IEnumerator FadeFlow()
+    IEnumerator All_FadeOut()//화면전체 페이드 인
     {
         Panel.gameObject.SetActive(true);
         time = 0f;
@@ -122,8 +123,22 @@ public class F_D_01 : MonoBehaviour
         }
         yield return null;
     }
+    IEnumerator All_FadeIn()//화면전체 페이드 아웃
+    {
+        time = 0f;
+        Color alpha = Panel.color;
+        while (alpha.a > 0f)
+        {
+            time += Time.deltaTime / F_time;
+            alpha.a = Mathf.Lerp(1,0,time);
+            Panel.color = alpha;
+            yield return null;
+        }
+        yield return null;
+        Panel.gameObject.SetActive(false);
+    }
 
-    IEnumerator FadeOut()
+    IEnumerator Sub_FadeIn()//화면 일부 페이드아웃
     {
         time = 0f;
         Color alpha = NarPanel.color;
@@ -137,9 +152,23 @@ public class F_D_01 : MonoBehaviour
         yield return null;
         NarPanel.gameObject.SetActive(false);
     }
-
-    public void TD_SceneChange()
+    IEnumerator Sub_FadeOut()//화면 일부 페이드인
     {
-        SceneManager.LoadScene("MonsterScene");
+        NarPanel.gameObject.SetActive(true);
+        time = 0f;
+        Color alpha = NarPanel.color;
+        while (alpha.a < 1f)
+        {
+            time += Time.deltaTime / F_time;
+            alpha.a = Mathf.Lerp(0,1,time);
+            NarPanel.color = alpha;
+            yield return null;
+        }
+        yield return null;
+    }
+
+    void SceneChange()
+    {
+        SceneManager.LoadScene("SampleScene");
     }
 }

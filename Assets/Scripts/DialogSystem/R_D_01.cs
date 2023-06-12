@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class F_D_02 : MonoBehaviour
+public class R_D_01 : MonoBehaviour
 {
     public Text TextBox;
     public Text NameBox;
@@ -28,13 +28,16 @@ public class F_D_02 : MonoBehaviour
     
     string[] DialogueSet = //대화세트
         {
-            "헉...헉...", "이게 대체 무슨...", //0-1
-            "...",
-            "우리가 가지고 있는 정보랑 너무 달라.",
-            "이 당시로부터 전해진 정보가 적어서 조금 차이가 있을거라고 생각은 했지만 이건 예상범위 밖인걸.",
-            "일단 방어선을 구축했으니 식물 전송을 진행해줘. 나는 네 레이저건을 강화할 준비를 할게.",//2-5
-            "알았어. 가자, 1호!", //6
-            "명령 이행. 채집 모드로 전환합니다.",//7
+            "전송된 샘플은 이상 없어.", "식물이라는 거... 생각보다 특이한 질감이네.", //0-1
+            "감상이 그거야? 너답네 정말...",
+            "아무튼 제대로 전송됐다니 한시름 놨는걸.",
+            "안심하고 임무를 수행 할 수 있겠어.",//2-4
+            "그래. 마침 네 레이저건을 강화할 준비도 끝났어. 1호, 수신모드.",//5
+            "명령 이행. 수신모드로 전환합니다.", //6
+            "태오, 레이저건을 1호에게 가져다 대.",//7
+            "오케이, 준비됐어",//8
+            "에너지를 주입합니다.", "...", "...완료.", "프로세스를 수정합니다.", "...", "...완료.", "발생한 오류는 없습니다.", "수신모드를 종료합니다.",//9-16
+            "이제 건의 공격력이 두배정도 좋아졌을거야.", "...타이밍 좋게 몰려오는것 같네.", "준비해, 건을 강화했다곤 해도 전투는 쉽지 않을거야."//17-19
         };
     string Dialogue;
     int setNum = 0; //DialogueSet 인덱스 관리
@@ -42,14 +45,14 @@ public class F_D_02 : MonoBehaviour
     void Awake()
     {
         Panel.gameObject.SetActive(true);
-        StartCoroutine(All_FadeFlow2());
+        StartCoroutine(All_FadeIn());
         Invoke("D_Start", 1f);
     }
     
     void D_Start()
     {
         checkNum = 1;
-        NameBox.text = NameSet[1];
+        NameBox.text = NameSet[2];
         
         Dialogue = DialogueSet[setNum];
         StartCoroutine(Typing(Dialogue));
@@ -69,17 +72,25 @@ public class F_D_02 : MonoBehaviour
                 
                 switch(setNum)
                 {
-                    case 2:
+                    case 2://태오
+                        Tao.gameObject.SetActive(false); Rea.gameObject.SetActive(true); NameBox.text = NameSet[1]; break;
+                    case 5://연구원
                         Tao.gameObject.SetActive(true); Rea.gameObject.SetActive(false); NameBox.text = NameSet[2]; break;
-                    case 6:
-                        Tao.gameObject.SetActive(false); Rea.gameObject.SetActive(true); NameBox.text = NameSet[2]; break;
-                    case 7:
+                    case 6://1호
                         Tao.gameObject.SetActive(true); Rea.gameObject.SetActive(false); ReaM.gameObject.SetActive(false); NameBox.text = NameSet[0]; break;
+                    case 7://연구원
+                        Tao.gameObject.SetActive(true); ReaM.gameObject.SetActive(true); NameBox.text = NameSet[2]; break;
+                    case 8://태오
+                        Tao.gameObject.SetActive(false); Rea.gameObject.SetActive(true); NameBox.text = NameSet[1]; break;
+                    case 9://1호
+                        StartCoroutine(Sub_FadeOut()); Tao.gameObject.SetActive(true); Rea.gameObject.SetActive(false); ReaM.gameObject.SetActive(false); NameBox.text = NameSet[0]; break;
+                    case 17://연구원
+                        StartCoroutine(Sub_FadeIn()); Tao.gameObject.SetActive(true); ReaM.gameObject.SetActive(true); NameBox.text = NameSet[2]; break;
                 }
             }
             else
             {
-                StartCoroutine(FadeFlow());//화면 암전 후 씬 전환
+                StartCoroutine(All_FadeOut());//화면 암전 후 씬 전환
                 Invoke("SceneChange", 1f);
             }
             
@@ -99,7 +110,7 @@ public class F_D_02 : MonoBehaviour
         checkNum = 1;
     }
 
-    IEnumerator FadeFlow()//화면전체 페이드 인
+    IEnumerator All_FadeOut()//화면전체 페이드 인
     {
         Panel.gameObject.SetActive(true);
         time = 0f;
@@ -113,7 +124,7 @@ public class F_D_02 : MonoBehaviour
         }
         yield return null;
     }
-    IEnumerator All_FadeFlow2()//화면전체 페이드 아웃
+    IEnumerator All_FadeIn()//화면전체 페이드 아웃
     {
         time = 0f;
         Color alpha = Panel.color;
@@ -128,7 +139,7 @@ public class F_D_02 : MonoBehaviour
         Panel.gameObject.SetActive(false);
     }
 
-    IEnumerator FadeOut()//화면 일부 페이드아웃
+    IEnumerator Sub_FadeIn()//화면 일부 페이드아웃
     {
         time = 0f;
         Color alpha = NarPanel.color;
@@ -142,7 +153,7 @@ public class F_D_02 : MonoBehaviour
         yield return null;
         NarPanel.gameObject.SetActive(false);
     }
-    IEnumerator Sub_FadeIn()//화면 일부 페이드인
+    IEnumerator Sub_FadeOut()//화면 일부 페이드인
     {
         NarPanel.gameObject.SetActive(true);
         time = 0f;

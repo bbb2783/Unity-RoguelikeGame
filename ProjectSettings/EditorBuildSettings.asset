@@ -18,6 +18,21 @@ EditorBuildSettings:
     path: Assets/Scenes/DialogueScene/D_forest_start.unity
     guid: 76d8f57368ae71741999bd0ab5e77e8f
   - enabled: 1
+    path: Assets/Scenes/DialogueScene/D_forest_mid.unity
+    guid: 0f129cf108a300e4585333440e0237d5
+  - enabled: 1
+    path: Assets/Scenes/DialogueScene/D_river_start.unity
+    guid: 92c4cd4eedf420e4ab287352fecf0600
+  - enabled: 1
+    path: Assets/Scenes/DialogueScene/D_river_mid.unity
+    guid: e0ba8af487095054ea8a3ebebc7d5bb5
+  - enabled: 1
+    path: Assets/Scenes/DialogueScene/D_city_start.unity
+    guid: aa191cfad7f8d2845a40ad58954dee04
+  - enabled: 1
+    path: Assets/Scenes/DialogueScene/D_city_mid.unity
+    guid: 31c159dc92df46a4fafcd4e1e45dbdbf
+  - enabled: 1
     path: Assets/Scenes/MonsterScene.unity
     guid: 40db00b187450fb4fb01238cfe038f9c
   - enabled: 1
