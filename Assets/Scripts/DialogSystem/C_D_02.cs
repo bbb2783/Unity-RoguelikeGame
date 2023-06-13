@@ -169,6 +169,6 @@ public class C_D_02 : MonoBehaviour
 
     void SceneChange()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("City01_2");
     }
 }

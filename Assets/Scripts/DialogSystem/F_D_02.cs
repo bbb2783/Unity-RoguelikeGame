@@ -159,6 +159,6 @@ public class F_D_02 : MonoBehaviour
 
     void SceneChange()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("Forest01_2");
     }
 }

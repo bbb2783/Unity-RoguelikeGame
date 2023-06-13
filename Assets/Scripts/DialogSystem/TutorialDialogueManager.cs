@@ -8,6 +8,7 @@ public class TutorialDialogueManager : MonoBehaviour
 {
     public Text TextBox;
     public Text NameBox;
+    public AudioSource Beep;
     
     public Image NarPanel;//나레이션용 패널
     public Image Panel;//씬 전환용 설정
@@ -96,6 +97,7 @@ public class TutorialDialogueManager : MonoBehaviour
         for(int i = 0; i < Talk.Length; i++)
         {
             TextBox.text += Talk[i];
+            if(i%2==0) Beep.Play();
 
             yield return new WaitForSeconds(0.05f);
         }

@@ -44,6 +44,9 @@ public class MonsterZombieMove : MonoBehaviour
         Vector2 nextVec = dirVec.normalized * speed * Time.fixedDeltaTime;
         rigid.MovePosition(rigid.position + nextVec);
         rigid.velocity = Vector2.zero;
+
+        if(MGameManager.instance.gameTime>=300)
+        {zombieHealth = 0;}
     }
 
     void LateUpdate()

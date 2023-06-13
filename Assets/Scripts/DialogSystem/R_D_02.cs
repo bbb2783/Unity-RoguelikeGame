@@ -156,6 +156,6 @@ public class R_D_02 : MonoBehaviour
 
     void SceneChange()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("River01_2");
     }
 }
