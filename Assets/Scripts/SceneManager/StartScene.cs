@@ -15,7 +15,7 @@ public class StartScene : MonoBehaviour
     void Awake()
     {
         StartCoroutine(FadeOut());
-        Invoke("NextScene", 2f);
+        Invoke("NextScene", 3f);
     }
     
     void NextScene()
@@ -42,11 +42,12 @@ public class StartScene : MonoBehaviour
     IEnumerator FadeFlow()
     {
         Panel.gameObject.SetActive(true);
+        time = 0f;
         Color alpha = Panel.color;
-        while (alpha.a < 1f)
+        while (alpha.a < 2f)
         {
             time += Time.deltaTime / F_time;
-            alpha.a = Mathf.Lerp(0,1,time);
+            alpha.a = Mathf.Lerp(0,2,time);
             Panel.color = alpha;
             yield return null;
         }
