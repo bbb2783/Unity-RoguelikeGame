@@ -124,10 +124,12 @@ public class Inventory : MonoBehaviour
             if (tooltip != null)
             {
                 tooltip.gameObject.SetActive(true);
-                tooltip.SetupTooltip(slot.item.itemName, slot.item.itemDescription, slot.item.Atk);
+                Item item = slot.item; // 아이템 변수 정의
+                tooltip.SetupTooltip(item.itemName, item.itemDescription, item.Atk, item.itemImage2);
             }
         }
     }
 }
+
 
 }

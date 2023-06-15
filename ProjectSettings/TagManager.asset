@@ -10,7 +10,6 @@ TagManager:
   - Monster
   - wall
   - FieldObject
-  - npc
   layers:
   - Default
   - TransparentFX

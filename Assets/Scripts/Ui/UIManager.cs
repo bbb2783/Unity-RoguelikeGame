@@ -26,7 +26,7 @@ public class UIManager : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene("Main");
+            SceneManager.LoadScene("MonsterScene");
         }
     }
 

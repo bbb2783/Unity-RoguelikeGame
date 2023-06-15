@@ -168,6 +168,6 @@ public class C_D_01 : MonoBehaviour
 
     void SceneChange()
     {
-        SceneManager.LoadScene("City01_1");
+        SceneManager.LoadScene("SampleScene");
     }
 }

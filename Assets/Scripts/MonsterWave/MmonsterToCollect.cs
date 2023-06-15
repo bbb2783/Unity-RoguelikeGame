@@ -9,10 +9,9 @@ public class MmonsterToCollect : MonoBehaviour
 {
     public GameObject MSpawner;
     public GameObject MGameManager;
-    public int MonsterSceneNum;
     float isLevel;
     float isPlayerLive;
-    public GameObject finishTxt;
+
 
     void Awake()
     {
@@ -26,21 +25,7 @@ public class MmonsterToCollect : MonoBehaviour
         if((MSpawner.GetComponent<MSpawner>().spawnLevel==2)
             &&(MGameManager.GetComponent<MGameManager>().playerHealth>0))
         {
-            finishTxt.SetActive(true);
-            Invoke("Sceneloader", 3f);
+            SceneManager.LoadScene("D_forest_2");
         }
-    }
-
-    void Sceneloader()
-    {
-        switch(MonsterSceneNum)
-            {
-                case 1:
-                    SceneManager.LoadScene("D_forest_mid"); return;
-                case 2:
-                    SceneManager.LoadScene("D_river_mid"); return;
-                case 3:
-                    SceneManager.LoadScene("D_city_mid"); return;
-            }
     }
 }

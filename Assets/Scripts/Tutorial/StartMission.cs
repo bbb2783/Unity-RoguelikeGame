@@ -35,6 +35,6 @@ public class StartMission : MonoBehaviour
 
     public void ML_SceneChange()
     {
-        SceneManager.LoadScene("D_forest_start");
+        SceneManager.LoadScene("D_forest_1");
     }
 }

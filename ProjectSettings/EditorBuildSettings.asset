@@ -6,9 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/StartScene.unity
-    guid: 53af1a35ecdeb7e40abdf811f5d36d0d
-  - enabled: 1
     path: Assets/Scenes/Main.unity
     guid: fc198e6805c9bed41ac4ab89f938220b
   - enabled: 1
@@ -36,27 +33,12 @@ EditorBuildSettings:
     path: Assets/Scenes/DialogueScene/D_city_mid.unity
     guid: 31c159dc92df46a4fafcd4e1e45dbdbf
   - enabled: 1
-    path: Assets/Scenes/M_forest/Forest01_1.unity
-    guid: dc62e682a2441064e9132051cba755fd
+    path: Assets/Scenes/MonsterScene.unity
+    guid: 40db00b187450fb4fb01238cfe038f9c
   - enabled: 1
-    path: Assets/Scenes/M_forest/Forest01_2.unity
-    guid: 1562e88009ce40e43a508a55645783ec
+    path: Assets/Scenes/SampleScene.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/M_river/River01_1.unity
-    guid: 4800edc0212155146b8dbca544957558
-  - enabled: 1
-    path: Assets/Scenes/M_river/River01_2.unity
-    guid: f87e38b0555c5c645bc016c129456d1f
-  - enabled: 1
-    path: Assets/Scenes/M_city/City01_1.unity
-    guid: 4df3db082f5ba5a439edde037a6a633e
-  - enabled: 1
-    path: Assets/Scenes/M_city/City01_2.unity
-    guid: d6aa4f24223da2340ba0b0d956974f8d
-  - enabled: 1
-    path: Assets/Scenes/Ending/BadEnd1.unity
+    path: Assets/Scenes/BadEnd1.unity
     guid: 48cea261deb8fb541bcc2cedf36cf3b8
-  - enabled: 1
-    path: Assets/Scenes/Ending/NormalEnd1.unity
-    guid: eb823909f1f62d546ad631056fae7587
   m_configObjects: {}

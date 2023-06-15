@@ -71,7 +71,7 @@ public class F_D_01 : MonoBehaviour
                     case 1:
                         StartCoroutine(FadeOut()); NameBox.text = NameSet[1]; break;
                     case 2:
-                        Tao.gameObject.SetActive(true); Rea.gameObject.SetActive(false); NameBox.text = NameSet[2]; break;
+                        Tao.gameObject.SetActive(true); NameBox.text = NameSet[2]; break;
                     case 3:
                         Tao.gameObject.SetActive(false); Rea.gameObject.SetActive(true); NameBox.text = NameSet[1]; break;
                     case 7:
@@ -140,6 +140,6 @@ public class F_D_01 : MonoBehaviour
 
     public void TD_SceneChange()
     {
-        SceneManager.LoadScene("Forest01_1");
+        SceneManager.LoadScene("MonsterScene");
     }
 }
