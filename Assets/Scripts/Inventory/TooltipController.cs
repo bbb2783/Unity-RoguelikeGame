@@ -13,8 +13,7 @@ public class TooltipController : MonoBehaviour, IPointerEnterHandler, IPointerEx
         if (item != null)
         {
             tooltip.gameObject.SetActive(true);
-            tooltip.SetupTooltip(item.itemName, item.itemDescription, item.Atk, item.itemImage2);
-
+            tooltip.SetupTooltip(item.itemName, item.itemDescription, item.Atk);
         }
     }
     

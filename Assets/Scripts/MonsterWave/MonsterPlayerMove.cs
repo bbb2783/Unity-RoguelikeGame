@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MonsterPlayerMove : MonoBehaviour
 {
     public Vector2 inputVec;
     public float speed;
-    public AudioClip footstep;
+    public AudioSource footstep;
 
     private Vector2 mousePos;//마우스 값 받아옴
     private Animator anim; //for 애니메이션 제어
@@ -75,6 +76,7 @@ public class MonsterPlayerMove : MonoBehaviour
             for(int index=2; index<transform.childCount; index++){
                 transform.GetChild(index).gameObject.SetActive(false);
             }
+            SceneManager.LoadScene("BadEnd1");
         }
 
         //아이템 상호작용
@@ -101,6 +103,6 @@ public class MonsterPlayerMove : MonoBehaviour
 
     void FootStep()
     {
-        AudioSource.PlayClipAtPoint(footstep, Camera.main.transform.position);
+        footstep.Play();
     }
 }

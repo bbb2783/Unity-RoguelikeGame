@@ -8,7 +8,7 @@ public class BadEnd1 : MonoBehaviour
 {
     public Text TextBox;
     public Text NameBox;
-    public Text EndingBox;
+    public GameObject BackMain;
     
     public Image NarPanel;//나레이션용 패널
     public Image Panel;//씬 전환용 설정
@@ -16,8 +16,16 @@ public class BadEnd1 : MonoBehaviour
     float time = 0f;
     float F_time = 1f;
     int checkNum = 0;
+    
+    string[] DialogueSet = //대화세트
+        {
+            "생체반응 없음... 탐사자 사망. 임무실패",
+            "BAD END - 희생된 첫번째 탐사대원",
+            "메인 화면으로 돌아가시겠습니까?",
+        };
 
     string Dialogue;
+    int setNum = 0; //DialogueSet 인덱스 관리
 
     void Start()
     {
@@ -28,12 +36,20 @@ public class BadEnd1 : MonoBehaviour
 
     void Update()
     {   
-        if(checkNum == 1)
+        if(setNum>=DialogueSet.Length) return;//배열 길이 이상으로 클릭 할 수 없게
+        for(int i = 0; i<3; i++)
         {
-            StartCoroutine(FadeFlow());
-            Invoke("EndingPrint", 2f);
+            if(Input.GetMouseButtonDown(0) && checkNum==1)
+            {
+                NameBox.text = "";
+                Dialogue = DialogueSet[setNum];
+                StartCoroutine(Typing(Dialogue));
+                setNum += 1;
+            }
         }
+        if(setNum == 3) Invoke("Back_SceneChange", 1f);
     }
+    
 
     IEnumerator Typing(string Talk)
     {
@@ -42,19 +58,6 @@ public class BadEnd1 : MonoBehaviour
         for(int i = 0; i < Talk.Length; i++)
         {
             TextBox.text += Talk[i];
-
-            yield return new WaitForSeconds(0.05f);
-        }
-        checkNum = 1;
-    }
-
-    IEnumerator EndTyping(string Talk)
-    {
-        checkNum = 0;
-        EndingBox.text = null;
-        for(int i = 0; i < Talk.Length; i++)
-        {
-            EndingBox.text += Talk[i];
 
             yield return new WaitForSeconds(0.05f);
         }
@@ -76,22 +79,8 @@ public class BadEnd1 : MonoBehaviour
         yield return null;
     }
 
-    public void EndingPrint()
-    {
-        Dialogue = "생체반응 없음... \n 탐사자 사망. 임무실패";
-        StartCoroutine(EndTyping(Dialogue));
-
-        if(checkNum == 2)
-        {
-            Dialogue = "BAD END - 희생자";
-            StartCoroutine(EndTyping(Dialogue));
-            Invoke("Back_SceneChange", 3f);
-        }
-        
-    }
-
     public void Back_SceneChange()
     {
-        SceneManager.LoadScene("Main");
+        BackMain.SetActive(true);
     }
 }
