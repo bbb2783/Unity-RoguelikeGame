@@ -8,10 +8,18 @@ public class Slot : MonoBehaviour
     public Image itemIcon;
 
     public void UpdateSlotUI()
+{
+    if (item != null && item.itemImage != null)
     {
         itemIcon.sprite = item.itemImage;
         itemIcon.gameObject.SetActive(true);
     }
+    else
+    {
+        itemIcon.gameObject.SetActive(false);
+    }
+}
+
 
     public void RemoveSlot()
     {
