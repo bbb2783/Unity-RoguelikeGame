@@ -5097,8 +5097,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 222420906}
-        m_TargetAssemblyTypeName: DontUse, Assembly-CSharp
-        m_MethodName: Arret
+        m_TargetAssemblyTypeName: MainToNew, Assembly-CSharp
+        m_MethodName: ChangeSceneBtn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5155,10 +5155,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 222420901}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b063c52a8acc4f419c69fbc9eeb1a9c, type: 3}
+  m_Script: {fileID: 11500000, guid: 9601c1a0ce63c4c439bec4122b7238e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DontUseYet: {fileID: 814183386}
+  Panel: {fileID: 179788784}
+  particle: {fileID: 174405705}
 --- !u!1 &254542632
 GameObject:
   m_ObjectHideFlags: 0
@@ -5573,8 +5574,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 640188234}
-        m_TargetAssemblyTypeName: DontUse, Assembly-CSharp
-        m_MethodName: Arret
+        m_TargetAssemblyTypeName: MainToNew, Assembly-CSharp
+        m_MethodName: ChangeSceneBtn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5631,10 +5632,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 640188229}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b063c52a8acc4f419c69fbc9eeb1a9c, type: 3}
+  m_Script: {fileID: 11500000, guid: 9601c1a0ce63c4c439bec4122b7238e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DontUseYet: {fileID: 814183386}
+  Panel: {fileID: 179788784}
+  particle: {fileID: 174405705}
 --- !u!1 &697970556
 GameObject:
   m_ObjectHideFlags: 0

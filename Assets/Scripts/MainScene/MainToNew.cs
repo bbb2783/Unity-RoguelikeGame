@@ -11,14 +11,15 @@ public class MainToNew : MonoBehaviour
     float time = 0f;
     float F_time = 1f;
     
-    public void ChangeSceneBtn()
+    public void ChangeSceneBtn()//페이드 효과 진행(3초) 후 씬 전환 실행
     {
         StartCoroutine(FadeFlow());
         particle.gameObject.SetActive(false);
-        Invoke("T_SceneChange", 3f);
+        Invoke("SelectScene", 3f);
     }
 
-    IEnumerator FadeFlow()
+
+    IEnumerator FadeFlow()//페이드효과
     {
         Panel.gameObject.SetActive(true);
         Color alpha = Panel.color;
@@ -31,9 +32,21 @@ public class MainToNew : MonoBehaviour
         }
         yield return null;
     }
-
-    public void T_SceneChange()
+    
+    public void SelectScene()//버튼에 따라 다른 씬 전환
     {
-        SceneManager.LoadScene("TutorialDialogue");
+        switch (this.gameObject.name)
+        {
+            case "NewGame":
+                SceneManager.LoadScene("TutorialDialogue");
+                break;
+            case "Nolimit":
+                SceneManager.LoadScene("Nolimit_Tutorial"); 
+                break;
+            case "ending record":
+                SceneManager.LoadScene("Ending Record"); 
+                break;
+        }
+        
     }
 }

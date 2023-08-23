@@ -65,4 +65,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Ending Record/Ending Record.unity
+    guid: 596b3d3829654604f8193ec757dd05ec
+  - enabled: 1
+    path: Assets/Scenes/Nolimit/Infinite Monster.unity
+    guid: 7b308ca7554602f4c937d7aebedddbef
+  - enabled: 1
+    path: Assets/Scenes/Nolimit/Nolimit_Tutorial.unity
+    guid: dbb1ab10bbca7f44881030562341072d
   m_configObjects: {}
