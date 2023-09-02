@@ -14,6 +14,7 @@ public class Nolimit_Tutiral_D : MonoBehaviour
 
     public Image Tao;//채도 조절용 패널
     public Image Rea;
+    public GameObject AlertSetting;//임시 알림창
 
     float time = 0f;
     float F_time = 1f;
@@ -88,10 +89,15 @@ public class Nolimit_Tutiral_D : MonoBehaviour
             else
             {
                 StartCoroutine(FadeFlow());
-                Invoke("TD_SceneChange", 1f);
+                Invoke("Alert", 1f);
             }
             
         }
+    }
+
+    void Alert()
+    {
+        AlertSetting.gameObject.SetActive(true);
     }
 
     IEnumerator Typing(string Talk)
@@ -141,6 +147,7 @@ public class Nolimit_Tutiral_D : MonoBehaviour
 
     public void TD_SceneChange()
     {
-        SceneManager.LoadScene("Infinite Monster");
+        SceneManager.LoadScene("Main");//컨텐츠 완성될때까지 막아둠 
+        //SceneManager.LoadScene("Infinite Monster");
     }
 }
