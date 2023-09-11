@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class PlantDatabase : MonoBehaviour
 {
     public static PlantDatabase instance;
-
+    public Sprite itemImage3;
     private void Awake()
     {
         instance = this;
@@ -17,17 +19,34 @@ public class PlantDatabase : MonoBehaviour
     public Vector3[] pos;
     public List<GameObject> spawnedItems = new List<GameObject>();
 
+
+
     private void Start()
+{
+    List<int> randomIndexes = GenerateUniqueRandomNumbers(0, pos.Length, 10);
+    for (int i = 0; i < randomIndexes.Count; i++)
     {
-        List<int> randomIndexes = GenerateUniqueRandomNumbers(0, pos.Length, 10);
-        for (int i = 0; i < randomIndexes.Count; i++)
+        int index = randomIndexes[i];
+        GameObject go = Instantiate(fieldItemPrefab, pos[index], Quaternion.identity);
+        
+        // 아이템 데이터베이스에서 아이템 선택
+        Item selectedItem = itemDB[Random.Range(0, itemDB.Count)];
+
+        // 이미지 설정은 여기서 수행
+        Image itemImage = go.GetComponent<Image>();
+        if (itemImage != null)
         {
-            int index = randomIndexes[i];
-            GameObject go = Instantiate(fieldItemPrefab, pos[index], Quaternion.identity);
-            go.GetComponent<FieldItem>().SetItem(itemDB[Random.Range(0, itemDB.Count)]);
-            spawnedItems.Add(go);
+            itemImage.sprite = selectedItem.itemImage3; // 아이템의 itemImage3를 사용하여 이미지 설정
         }
+
+        go.GetComponent<FieldItem>().SetItem(selectedItem);
+
+        spawnedItems.Add(go);
     }
+}
+
+
+
 
     private List<int> GenerateUniqueRandomNumbers(int min, int max, int count)
     {

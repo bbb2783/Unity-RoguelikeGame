@@ -105,7 +105,16 @@ public class InventoryUI : MonoBehaviour
         for (int i = 0; i < inven.items.Count; i++)
         {
             slots[i].item = inven.items[i];
+
+            // 아이템 이미지 설정은 여기서 수행
+            if (slots[i].item != null)
+            {
+                slots[i].itemIcon.sprite = inven.items[i].itemImage3; // itemImage3를 사용하여 이미지 설정
+                slots[i].itemIcon.gameObject.SetActive(true);
+            }
+        
             slots[i].UpdateSlotUI();
         }
     }
 }
+

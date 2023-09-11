@@ -18,6 +18,7 @@ public class Item
     public string itemName;
     public Sprite itemImage;
     public Sprite itemImage2;
+    public Sprite itemImage3;
     public bool Use()
     {
         return false;
