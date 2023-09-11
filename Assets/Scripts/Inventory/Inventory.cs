@@ -8,6 +8,7 @@ public class Inventory : MonoBehaviour
 
     #region Singleton
     public static Inventory instance;
+    private Sprite plantDatabaseItemImage3;
     private void Awake()
     {
         if(instance != null)
@@ -39,23 +40,27 @@ public class Inventory : MonoBehaviour
     {
         SlotCnt = 4; //시작 도감 숫자
     }
-
     public bool AddItem(Item _item)
+{
+    if(items.Count < SlotCnt)
     {
-        if(items.Count < SlotCnt)
-        {
-            items.Add(_item);
-            if(onChangeItem != null)
-            onChangeItem.Invoke(); //아이템을 추가하면 onchangeitme을 호출
-            
-            return true;
-        }
-        else
+        items.Add(_item);
+
+        // PlantDatabase의 itemImage3를 가져옵니다.
+        _item.itemImage3 = PlantDatabase.instance.itemImage3;
+        
+        if(onChangeItem != null)
+        onChangeItem.Invoke(); //아이템을 추가하면 onchangeitme을 호출
+        
+        return true;
+    }
+    else
     {
         Debug.Log("인벤토리가 가득 찼습니다.");
         return false;
     }
-    }
+}
+
     public void RemoveItem(Item item)
     {
         items.Remove(item);

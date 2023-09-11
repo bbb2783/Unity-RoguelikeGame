@@ -101,6 +101,7 @@ public class InventoryUI : MonoBehaviour
         for (int i = 0; i < slots.Length; i++)
         {
             slots[i].RemoveSlot();
+<<<<<<< HEAD
 
             if (i < inven.items.Count)
             {
@@ -118,7 +119,23 @@ public class InventoryUI : MonoBehaviour
                     slots[i].itemImage3.gameObject.SetActive(false);
                 }
             }
+=======
+        }
+        for (int i = 0; i < inven.items.Count; i++)
+        {
+            slots[i].item = inven.items[i];
+
+            // 아이템 이미지 설정은 여기서 수행
+            if (slots[i].item != null)
+            {
+                slots[i].itemIcon.sprite = inven.items[i].itemImage3; // itemImage3를 사용하여 이미지 설정
+                slots[i].itemIcon.gameObject.SetActive(true);
+            }
+        
+            slots[i].UpdateSlotUI();
+>>>>>>> 82c2f6fafa34ccd6851c27fba06e4dae63b922d5
         }
     }
 
 }
+

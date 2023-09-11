@@ -2804,6 +2804,7 @@ PrefabInstance:
     m_TransformParent: {fileID: 1813666818}
     m_Modifications:
     - target: {fileID: 3547014276852873412, guid: 0f71244958cf7d14ebd48f1cf28cf723, type: 3}
+<<<<<<< HEAD
       propertyPath: itemIcon
       value: 
       objectReference: {fileID: 0}
@@ -2811,6 +2812,11 @@ PrefabInstance:
       propertyPath: itemImage3
       value: 
       objectReference: {fileID: 1581777081}
+=======
+      propertyPath: item.itemImage3
+      value: 
+      objectReference: {fileID: 0}
+>>>>>>> 82c2f6fafa34ccd6851c27fba06e4dae63b922d5
     - target: {fileID: 5661061417418127185, guid: 0f71244958cf7d14ebd48f1cf28cf723, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -4376,6 +4382,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ca90014371460e48b850e7a01fbcd0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemImage3: {fileID: 21300000, guid: 2e6fc7a6efacfae4d9371fd88de73875, type: 3}
   itemDB:
   - Atk: 1
     itemDescription: "\uAD6D\uD654\uACFC \uCC9C\uC218\uAD6D\uC18D \uC2DD\uBB3C\uC774\uB2E4.
@@ -4385,37 +4392,62 @@ MonoBehaviour:
     itemType: 0
     itemName: "\uB9C8\uB9AC\uACE8\uB4DC"
     itemImage: {fileID: 21300000, guid: 4e9909e83c50d3646840a867841cd94f, type: 3}
+<<<<<<< HEAD
     itemImage2: {fileID: 21300000, guid: 84b147cca4e06c94fa1196cd1dd1b1ed, type: 3}
     itemImage3: {fileID: 21300000, guid: b7da8a75d386c3540a2df6a307f90a81, type: 3}
+=======
+    itemImage2: {fileID: 21300000, guid: 9b906aaa02cf98343b663ccbc911ee11, type: 3}
+    itemImage3: {fileID: 21300000, guid: 10c5979e19492f14cb7508b0879b2504, type: 3}
+>>>>>>> 82c2f6fafa34ccd6851c27fba06e4dae63b922d5
   - Atk: 0
     itemDescription: "\uC232\uC5D0\uC11C \uBCC4\uACAC\uB41C [\uB098\uBB34\uC5F4\uB9E4]\uC774\uB2E4.
       \uCC38\uB098\uBB34\uC18D\uC5D0 \uC18D\uD558\uB294 \uB098\uBB34\uC5D0\uC11C
       \uB5A8\uC5B4\uC9C4\uAC83\uC73C\uB85C \uCD94\uC815\uB41C\uB2E4. \uD615\uD0DC\uB294
       \uD0C0\uC6D0 \uBAA8\uC591\uC5D0 \uAC00\uAE4C\uC6B4\uB4EF \uD558\uB2E4."
     itemType: 1
+<<<<<<< HEAD
     itemName: "\uB3C4\uD1A0\uB9AC"
     itemImage: {fileID: 21300000, guid: 8ad47e3718a6c8741b7c44373ba341da, type: 3}
     itemImage2: {fileID: 21300000, guid: a0e566b931f64a145ad5245502f4a726, type: 3}
+=======
+    itemName: "\uC548\uD14C\uB098\uB9AC\uC544"
+    itemImage: {fileID: 21300000, guid: e85be25cfc45e7047be5ec2a0147a0fb, type: 3}
+    itemImage2: {fileID: 21300000, guid: 47baca3ca0f5c0742bee066636f410a7, type: 3}
+>>>>>>> 82c2f6fafa34ccd6851c27fba06e4dae63b922d5
     itemImage3: {fileID: 21300000, guid: d8a2a758df875624c992bfb0ce7a4e9e, type: 3}
   - Atk: 0
     itemDescription: "\uB3C4\uC2DC\uC5D0\uC11C \uBC1C\uACAC\uB41C [\uAF43]\uC774\uB2E4.
       \uAF43\uC740 \uC5FD\uC561\uC5D0\uC11C \uACC4\uC18D \uD53C\uBA70 \uC5F0\uD55C
       \uD64D\uC0C9 \uB610\uB294 \uC9D9\uC740 \uC801\uC0C9\uC774\uB2E4."
     itemType: 2
+<<<<<<< HEAD
     itemName: "\uBCA0\uACE0\uB2C8\uC544"
     itemImage: {fileID: 21300000, guid: 41839117b03d71641a40322dbc758db4, type: 3}
     itemImage2: {fileID: 21300000, guid: 87d45e729e52b7144b11adde0cf5c967, type: 3}
     itemImage3: {fileID: 21300000, guid: 27e8185b2f5dcbe498e23eb16e7659c6, type: 3}
+=======
+    itemName: "\uBBFC\uB4E4\uB808"
+    itemImage: {fileID: 21300000, guid: 2c7860887a02d27488a509a3a0d7e74a, type: 3}
+    itemImage2: {fileID: 21300000, guid: 1268e4ba31191d04d868e0a6c35084f0, type: 3}
+    itemImage3: {fileID: 21300000, guid: d8a2a758df875624c992bfb0ce7a4e9e, type: 3}
+>>>>>>> 82c2f6fafa34ccd6851c27fba06e4dae63b922d5
   - Atk: 0
     itemDescription: "\uAC15\uAC00\uC5D0\uC11C \uBC1C\uACAC\uB41C \uCC38\uB098\uBB34\uBAA9
       [\uC790\uC791\uB098\uBB34\uACFC]\uC5D0 \uC18D\uD558\uB294 \uAD00\uC18D\uC2DD\uBB3C\uC774\uB2E4.
       \uC904\uAE30\uAECD\uC9C8\uC740 \uBC1D\uC740 \uD68C\uC0C9\uC744 \uB760\uB294
       \uD770\uC0C9\uC774\uACE0 \uC724\uAE30\uAC00 \uC788\uB2E4."
     itemType: 2
+<<<<<<< HEAD
     itemName: "\uC790\uC791\uB098\uBB34"
     itemImage: {fileID: 21300000, guid: 75e5807dad0b6b24bbcc1b0ef4b7f200, type: 3}
     itemImage2: {fileID: 21300000, guid: daba36510630ffd48a02a6c2deeb53ec, type: 3}
     itemImage3: {fileID: 21300000, guid: e2098605d8b93074689e7d4a1687ad87, type: 3}
+=======
+    itemName: "\uBD93\uAF43"
+    itemImage: {fileID: 21300000, guid: daa1c4d5295a68d48a51dea2c9311516, type: 3}
+    itemImage2: {fileID: 21300000, guid: d8a2a758df875624c992bfb0ce7a4e9e, type: 3}
+    itemImage3: {fileID: 21300000, guid: d8a2a758df875624c992bfb0ce7a4e9e, type: 3}
+>>>>>>> 82c2f6fafa34ccd6851c27fba06e4dae63b922d5
   - Atk: 0
     itemDescription: "\uAC15\uAC00\uC5D0\uC11C \uBC1C\uACAC\uB41C \uAD6D\uD654\uACFC\uC5D0
       \uC18D\uD55C \uC5EC\uB7EC\uD574\uC0B4\uC774\uD480\uC774\uB2E4. \uBFCC\uB9AC\uC78E\uC740
@@ -4423,10 +4455,17 @@ MonoBehaviour:
       \uADDC\uCE59\uC801\uC778 \uD1B1\uB2C8\uAC00 \uC788\uC73C\uBA70 \uC78E\uC790\uB8E8\uAC00
       \uAE38\uB2E4."
     itemType: 2
+<<<<<<< HEAD
     itemName: Ligularia
     itemImage: {fileID: 21300000, guid: ca94a28f151c5f547bf2e89717fc2ed9, type: 3}
     itemImage2: {fileID: 21300000, guid: 2f2b83398cd27b648b6d43b2c2a12a1e, type: 3}
     itemImage3: {fileID: 21300000, guid: 4303e5a7b93e8c043803f8280db0d220, type: 3}
+=======
+    itemName: "\uAC08\uB300"
+    itemImage: {fileID: 21300000, guid: 9980faec8c2d6d146a56c60301d44c5d, type: 3}
+    itemImage2: {fileID: 21300000, guid: 855d2428d1dc53c499decc06235d655d, type: 3}
+    itemImage3: {fileID: 21300000, guid: d8a2a758df875624c992bfb0ce7a4e9e, type: 3}
+>>>>>>> 82c2f6fafa34ccd6851c27fba06e4dae63b922d5
   - Atk: 0
     itemDescription: "\uD754\uD558\uAC8C \uBCFC \uC218 \uC788\uB358 \uD480\uC774\uB77C\uACE0
       \uD55C\uB2E4. \uAE30\uD6C4\uAC00 \uBCC0\uD654\uB418\uBA74\uC11C \uC810\uCC28
@@ -4441,11 +4480,69 @@ MonoBehaviour:
       \uD55C\uB2E4. \uAE30\uD6C4\uAC00 \uBCC0\uD654\uB418\uBA74\uC11C \uC810\uCC28
       \uBCF4\uAE30 \uC5B4\uB824\uC6CC\uC84C\uB2E4."
     itemType: 2
+<<<<<<< HEAD
+=======
+    itemName: Acorn
+    itemImage: {fileID: 21300000, guid: 8ad47e3718a6c8741b7c44373ba341da, type: 3}
+    itemImage2: {fileID: 21300000, guid: 82c7ad1534473974abec4d0ad36ab13f, type: 3}
+    itemImage3: {fileID: 21300000, guid: d8a2a758df875624c992bfb0ce7a4e9e, type: 3}
+  - Atk: 0
+    itemDescription: "\uD754\uD558\uAC8C \uBCFC \uC218 \uC788\uB358 \uD480\uC774\uB77C\uACE0
+      \uD55C\uB2E4. \uAE30\uD6C4\uAC00 \uBCC0\uD654\uB418\uBA74\uC11C \uC810\uCC28
+      \uBCF4\uAE30 \uC5B4\uB824\uC6CC\uC84C\uB2E4."
+    itemType: 2
+    itemName: Begonia
+    itemImage: {fileID: 21300000, guid: 41839117b03d71641a40322dbc758db4, type: 3}
+    itemImage2: {fileID: 21300000, guid: 82c7ad1534473974abec4d0ad36ab13f, type: 3}
+    itemImage3: {fileID: 21300000, guid: d8a2a758df875624c992bfb0ce7a4e9e, type: 3}
+  - Atk: 0
+    itemDescription: "\uD754\uD558\uAC8C \uBCFC \uC218 \uC788\uB358 \uD480\uC774\uB77C\uACE0
+      \uD55C\uB2E4. \uAE30\uD6C4\uAC00 \uBCC0\uD654\uB418\uBA74\uC11C \uC810\uCC28
+      \uBCF4\uAE30 \uC5B4\uB824\uC6CC\uC84C\uB2E4."
+    itemType: 2
+    itemName: Betula
+    itemImage: {fileID: 21300000, guid: 75e5807dad0b6b24bbcc1b0ef4b7f200, type: 3}
+    itemImage2: {fileID: 21300000, guid: 82c7ad1534473974abec4d0ad36ab13f, type: 3}
+    itemImage3: {fileID: 21300000, guid: d8a2a758df875624c992bfb0ce7a4e9e, type: 3}
+  - Atk: 0
+    itemDescription: "\uD754\uD558\uAC8C \uBCFC \uC218 \uC788\uB358 \uD480\uC774\uB77C\uACE0
+      \uD55C\uB2E4. \uAE30\uD6C4\uAC00 \uBCC0\uD654\uB418\uBA74\uC11C \uC810\uCC28
+      \uBCF4\uAE30 \uC5B4\uB824\uC6CC\uC84C\uB2E4."
+    itemType: 2
+    itemName: Ligularia
+    itemImage: {fileID: 21300000, guid: ca94a28f151c5f547bf2e89717fc2ed9, type: 3}
+    itemImage2: {fileID: 21300000, guid: 82c7ad1534473974abec4d0ad36ab13f, type: 3}
+    itemImage3: {fileID: 21300000, guid: d8a2a758df875624c992bfb0ce7a4e9e, type: 3}
+  - Atk: 0
+    itemDescription: "\uD754\uD558\uAC8C \uBCFC \uC218 \uC788\uB358 \uD480\uC774\uB77C\uACE0
+      \uD55C\uB2E4. \uAE30\uD6C4\uAC00 \uBCC0\uD654\uB418\uBA74\uC11C \uC810\uCC28
+      \uBCF4\uAE30 \uC5B4\uB824\uC6CC\uC84C\uB2E4."
+    itemType: 2
+    itemName: Ligularia
+    itemImage: {fileID: 21300000, guid: ca94a28f151c5f547bf2e89717fc2ed9, type: 3}
+    itemImage2: {fileID: 21300000, guid: 82c7ad1534473974abec4d0ad36ab13f, type: 3}
+    itemImage3: {fileID: 21300000, guid: d8a2a758df875624c992bfb0ce7a4e9e, type: 3}
+  - Atk: 0
+    itemDescription: "\uD754\uD558\uAC8C \uBCFC \uC218 \uC788\uB358 \uD480\uC774\uB77C\uACE0
+      \uD55C\uB2E4. \uAE30\uD6C4\uAC00 \uBCC0\uD654\uB418\uBA74\uC11C \uC810\uCC28
+      \uBCF4\uAE30 \uC5B4\uB824\uC6CC\uC84C\uB2E4."
+    itemType: 2
+    itemName: Nelumbo
+    itemImage: {fileID: 21300000, guid: ca5a9482302f3424582269a99d0a597d, type: 3}
+    itemImage2: {fileID: 21300000, guid: 82c7ad1534473974abec4d0ad36ab13f, type: 3}
+    itemImage3: {fileID: 21300000, guid: d8a2a758df875624c992bfb0ce7a4e9e, type: 3}
+  - Atk: 0
+    itemDescription: "\uD754\uD558\uAC8C \uBCFC \uC218 \uC788\uB358 \uD480\uC774\uB77C\uACE0
+      \uD55C\uB2E4. \uAE30\uD6C4\uAC00 \uBCC0\uD654\uB418\uBA74\uC11C \uC810\uCC28
+      \uBCF4\uAE30 \uC5B4\uB824\uC6CC\uC84C\uB2E4."
+    itemType: 2
+>>>>>>> 82c2f6fafa34ccd6851c27fba06e4dae63b922d5
     itemName: Papaver
     itemImage: {fileID: 21300000, guid: be1b28b929c015d43a5cfb0fbca27256, type: 3}
     itemImage2: {fileID: 21300000, guid: 82c7ad1534473974abec4d0ad36ab13f, type: 3}
     itemImage3: {fileID: 21300000, guid: d8a2a758df875624c992bfb0ce7a4e9e, type: 3}
   - Atk: 0
+<<<<<<< HEAD
     itemDescription: "\uC232\uC5D0\uC11C \uBC1C\uACAC\uB41C [\uB098\uBB34 \uC5F4\uB9E4]\uC774\uB2E4.
       \uC18C\uB098\uBB34\uACFC\uC5D0 \uC18D\uD558\uB294 \uB098\uBB34\uC5D0\uC11C
       \uB5A8\uC5B4\uC9C4\uAC83\uC73C\uB85C \uCD94\uC815\uB41C\uB2E4. \uD615\uD0DC\uB294
@@ -4474,15 +4571,50 @@ MonoBehaviour:
     itemImage: {fileID: 21300000, guid: efc9b9c058e53874688771dd58611d48, type: 3}
     itemImage2: {fileID: 21300000, guid: db24044936735f047bdf72af5eb8e62e, type: 3}
     itemImage3: {fileID: 21300000, guid: 32fdb334906529144b640245fa479db3, type: 3}
+=======
+    itemDescription: "\uD754\uD558\uAC8C \uBCFC \uC218 \uC788\uB358 \uD480\uC774\uB77C\uACE0
+      \uD55C\uB2E4. \uAE30\uD6C4\uAC00 \uBCC0\uD654\uB418\uBA74\uC11C \uC810\uCC28
+      \uBCF4\uAE30 \uC5B4\uB824\uC6CC\uC84C\uB2E4."
+    itemType: 2
+    itemName: Pine_Cone
+    itemImage: {fileID: 21300000, guid: de7cbd82782cb314dacc71b4a6294059, type: 3}
+    itemImage2: {fileID: 21300000, guid: 82c7ad1534473974abec4d0ad36ab13f, type: 3}
+    itemImage3: {fileID: 21300000, guid: d8a2a758df875624c992bfb0ce7a4e9e, type: 3}
+>>>>>>> 82c2f6fafa34ccd6851c27fba06e4dae63b922d5
   - Atk: 0
     itemDescription: "\uD754\uD558\uAC8C \uBCFC \uC218 \uC788\uB358 \uD480\uC774\uB77C\uACE0
       \uD55C\uB2E4. \uAE30\uD6C4\uAC00 \uBCC0\uD654\uB418\uBA74\uC11C \uC810\uCC28
       \uBCF4\uAE30 \uC5B4\uB824\uC6CC\uC84C\uB2E4."
     itemType: 2
+<<<<<<< HEAD
     itemName: Setara
     itemImage: {fileID: 21300000, guid: 7ffb59fb9411b8f4d9f5910ff9b03b67, type: 3}
     itemImage2: {fileID: 21300000, guid: 82c7ad1534473974abec4d0ad36ab13f, type: 3}
     itemImage3: {fileID: 21300000, guid: 6777c0e4f87896142a3d80cd95a34e85, type: 3}
+=======
+    itemName: Pinus
+    itemImage: {fileID: 21300000, guid: 34ae6981e556ede40a5c25370ab7fd11, type: 3}
+    itemImage2: {fileID: 21300000, guid: 82c7ad1534473974abec4d0ad36ab13f, type: 3}
+    itemImage3: {fileID: 21300000, guid: d8a2a758df875624c992bfb0ce7a4e9e, type: 3}
+  - Atk: 0
+    itemDescription: "\uD754\uD558\uAC8C \uBCFC \uC218 \uC788\uB358 \uD480\uC774\uB77C\uACE0
+      \uD55C\uB2E4. \uAE30\uD6C4\uAC00 \uBCC0\uD654\uB418\uBA74\uC11C \uC810\uCC28
+      \uBCF4\uAE30 \uC5B4\uB824\uC6CC\uC84C\uB2E4."
+    itemType: 2
+    itemName: Pteridium
+    itemImage: {fileID: 21300000, guid: efc9b9c058e53874688771dd58611d48, type: 3}
+    itemImage2: {fileID: 21300000, guid: 82c7ad1534473974abec4d0ad36ab13f, type: 3}
+    itemImage3: {fileID: 21300000, guid: d8a2a758df875624c992bfb0ce7a4e9e, type: 3}
+  - Atk: 0
+    itemDescription: "\uD754\uD558\uAC8C \uBCFC \uC218 \uC788\uB358 \uD480\uC774\uB77C\uACE0
+      \uD55C\uB2E4. \uAE30\uD6C4\uAC00 \uBCC0\uD654\uB418\uBA74\uC11C \uC810\uCC28
+      \uBCF4\uAE30 \uC5B4\uB824\uC6CC\uC84C\uB2E4."
+    itemType: 2
+    itemName: Setaria
+    itemImage: {fileID: 21300000, guid: 7ffb59fb9411b8f4d9f5910ff9b03b67, type: 3}
+    itemImage2: {fileID: 21300000, guid: 82c7ad1534473974abec4d0ad36ab13f, type: 3}
+    itemImage3: {fileID: 21300000, guid: d8a2a758df875624c992bfb0ce7a4e9e, type: 3}
+>>>>>>> 82c2f6fafa34ccd6851c27fba06e4dae63b922d5
   fieldItemPrefab: {fileID: 7941495386462156161, guid: dfb787d460fc9ae43a28b570b0ed4653, type: 3}
   pos:
   - {x: 10, y: 2, z: 0}
