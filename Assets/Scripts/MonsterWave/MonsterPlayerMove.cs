@@ -8,6 +8,7 @@ public class MonsterPlayerMove : MonoBehaviour
     public Vector2 inputVec;
     public float speed;
     public AudioSource footstep;
+    public GameObject HitFace;
 
     private Vector2 mousePos;//마우스 값 받아옴
     private Animator anim; //for 애니메이션 제어
@@ -98,6 +99,35 @@ public class MonsterPlayerMove : MonoBehaviour
             /*
             	상호작용
             */
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        /*if (!collision.CompareTag("speeddown")) return; //늪 기믹 속도조절
+        speed = 3;
+        HitFace.SetActive(true);*/
+
+        if(collision.tag == "speeddown"){
+            speed = 3;
+            HitFace.SetActive(true);
+        }
+
+        if(collision.tag == "dotDemage"){
+            MGameManager.instance.playerHealth -= 5;
+            HitFace.SetActive(true); 
+        }
+    }
+    
+
+    void OnTriggerExit2D(Collider2D collision)
+    {
+        if (!collision.CompareTag("speeddown")) return;
+        speed = 8;
+        HitFace.SetActive(false); 
+
+        if(collision.tag == "dotDemage"){
+            HitFace.SetActive(false); 
         }
     }
 
