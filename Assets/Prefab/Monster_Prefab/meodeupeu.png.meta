@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0c6c3514b7ad420419378d64d9ecce3f
+guid: 060df1dc6bc82e641a9fb717c05e07bf
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -104,22 +104,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: C_UI_0
+      name: meodeupeu_0
       rect:
         serializedVersion: 2
-        x: 37
-        y: 14
-        width: 1020
-        height: 273
+        x: 6
+        y: 75
+        width: 127
+        height: 119
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 38, y: 36, z: 33, w: 39}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5551f40befeabd14b961cf307f484c5f
-      internalID: -2073365777
+      spriteID: d9fa2f9edce809947ad8c4bdf98d8100
+      internalID: -1979138632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: meodeupeu_1
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 6
+        width: 267
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c8732df65c9063409c35636f269e0ab
+      internalID: 1721955379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: meodeupeu_2
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 15
+        width: 41
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7c5918e6ac31c04383820504d6b1908
+      internalID: -543583900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: meodeupeu_3
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 2
+        width: 40
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb9b1c523c2974446b0a13ae7cfbb509
+      internalID: -579317067
       vertices: []
       indices: 
       edges: []
@@ -135,7 +198,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      C_UI_0: -2073365777
+      meodeupeu_1: 1721955379
+      meodeupeu_3: -579317067
+      meodeupeu_0: -1979138632
+      meodeupeu_2: -543583900
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
