@@ -1,10 +1,10 @@
 # Unity-RoguelikeGame
 <div align=center>
 	<img src="https://capsule-render.vercel.app/api?type=waving&color=&height=200&section=header&text=RoguelikeGame%20" />	
+	
+
 </div>
-<div align=center>
-<h4> 유니티 스토리 게임.</h4>
-</div>
+
 <div align=center>
 	<h3>📚 Tech Stack 📚</h3>
 	<p>✨ Platforms & Languages ✨</p>
