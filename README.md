@@ -1,11 +1,9 @@
 # Unity-RoguelikeGame
 
 <div align=center>
-	<img src="https://capsule-render.vercel.app/api?type=waving&color=&height=200&section=header&text=RoguelikeGame%20" />	
 	<img width="80%" src="https://github.com/bbb2783/Unity-RoguelikeGame/assets/81549915/2d970e18-6eb2-448f-9564-a5663277b21d.gif"/>
 
 </div>
-
 <div align=center>
 	<h3>📚 Tech Stack 📚</h3>
 	<p>✨ Platforms & Languages ✨</p>
@@ -16,7 +14,9 @@
 <h3 align="center"><b>🎮 Gaming 🎮</b></h3>
 </br>
 <p align="center">
-<img src="https://img.shields.io/badge/unity-%23000000.svg?style=for-the-badge&logo=unity&logoColor=white"/>
+<img src="https://img.shields.io/badge/unity-%23000000.svg?style=for-the-badge&logo=unity&logoColor=white"/><br>
+Unity Hub 3.3.0<br>
+에디터 버전: 2021.3.7f1
 </p>
 <br>
 <div align=center>
@@ -27,11 +27,24 @@
 	<img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=GitHub&logoColor=white" />
 </div>
 
+## 게임설명
+<h5>멸종된 식물을 찾아 과거로 떠나 사라진 식물을 채집해 미래로 가지고 오는 임무를 수행 하며 과거로 넘어가던 중 생겨난 바이러스로 인해 주인공의 임무를 방해 한다</h5>
+
+## 게임 이미지
+ 
+
+
 ## 다운로드
 
-- 저장소 Realse (https://github.com/bbb2783/Unity-RoguelikeGame/releases/tag/1.4v) 에서 -.1.4v.zip를 다운로드 하면 됩니다
-● 개발인원: 3명<br>
+- 저장소 Realse (https://github.com/bbb2783/Unity-RoguelikeGame/releases/tag/1.4v) 에서 -.1.4v.zip를 다운로드 하면 됩니다<br>
+<br>
+
+## 개발 기간 및 인원
+
+● 개발인원: 3명<br>	
 ● 개발기간: 2023-04<br>
+
+## 업데이트 
 
 <details>
 <summary><h3>수집맵 히스토리</h3></summary>
