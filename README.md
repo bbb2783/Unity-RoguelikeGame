@@ -23,9 +23,9 @@
 </div>
 <div align=center>
 	<img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=GitHub&logoColor=white" />
-	
 </div>
-
+## 다운로드
+- 현재 저장소 Realse (https://github.com/bbb2783/Unity-RoguelikeGame/releases/tag/1.4v)에서 다운로드 할수 있습니다
 ● 개발인원: 3명<br>
 ● 개발기간: 2023-04<br>
 
