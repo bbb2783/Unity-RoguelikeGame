@@ -53,14 +53,14 @@ public class MGun : MonoBehaviour
         else if(Input.GetKeyDown(KeyCode.R)) modeSet=4;
         else if(Input.GetKeyDown(KeyCode.F)) modeSet=1;//테스트용
         
-        //if(modeSet==1){
-        if(Input.GetMouseButtonDown(0))
-        {
-            GameObject Bullet = Instantiate(Resources.Load<GameObject>("Prefab/Bullet"), transform.position, transform.rotation);
-            Bullet.GetComponent<Rigidbody2D>().velocity = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle)) * Bullet.GetComponent<MBullet>().bulletSpd;
+        if(modeSet==1){
+            if(Input.GetMouseButtonDown(0))
+            {
+                GameObject Bullet = Instantiate(Resources.Load<GameObject>("Prefab/Bullet"), transform.position, transform.rotation);
+                Bullet.GetComponent<Rigidbody2D>().velocity = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle)) * Bullet.GetComponent<MBullet>().bulletSpd;
+            }
         }
-        //}
-        if(modeSet == 2){
+        else if(modeSet == 2){
             //횡 베기
         }
         else if(modeSet == 3){
@@ -68,6 +68,8 @@ public class MGun : MonoBehaviour
         }
         else if(modeSet == 4){
             //레일건
+            GameObject Bullet = Instantiate(Resources.Load<GameObject>("Prefab/Ray"), transform.position, transform.rotation);
+            Bullet.GetComponent<Rigidbody2D>().velocity = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle)) * Bullet.GetComponent<MBullet>().bulletSpd;
         }
     }
 }

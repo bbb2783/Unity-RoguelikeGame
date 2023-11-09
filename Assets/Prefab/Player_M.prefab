@@ -190,6 +190,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputVec: {x: 0, y: 0}
   speed: 5
+  footstep: {fileID: 0}
+  HitFace: {fileID: 0}
 --- !u!210 &8968209964700426898
 SortingGroup:
   m_ObjectHideFlags: 0
@@ -397,6 +399,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turnSpd: 15
+  modeSet: 1
 --- !u!1 &8968209964981120274
 GameObject:
   m_ObjectHideFlags: 0
@@ -532,7 +535,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 0.7326586
+  m_Length: 0.7326587
   m_ChildTransform: {fileID: 8968209965469447842}
   m_AttachedIK: {fileID: 0}
 --- !u!1 &8968209965132341771
