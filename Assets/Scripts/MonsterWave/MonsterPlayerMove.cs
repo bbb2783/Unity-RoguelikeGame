@@ -38,7 +38,7 @@ public class MonsterPlayerMove : MonoBehaviour
         inputVec.x = Input.GetAxisRaw("Horizontal");
         inputVec.y = Input.GetAxisRaw("Vertical");
 
-        mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);//마우스 위치에 따른 좌우변경
         if(mousePos.x < rigid.position.x)
         {
             transform.localScale = new Vector3(scaleX, scaleY, scaleZ);
@@ -50,6 +50,11 @@ public class MonsterPlayerMove : MonoBehaviour
             anim.SetBool("isWalk", true);
         }
         else {anim.SetBool("isWalk", false);}
+
+        if(Input.GetKey(KeyCode.LeftShift)){
+            speed = 20.0f;
+        }
+        else speed = 8.0f;
         
     }
 
