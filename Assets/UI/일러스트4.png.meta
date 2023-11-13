@@ -48,7 +48,11 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
+<<<<<<< HEAD
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+=======
+  spriteBorder: {x: 24, y: 27, z: 31, w: 26}
+>>>>>>> 97751d5ff8d36bedb0de813f56fbf5dd54f10f92
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -83,7 +87,11 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
+<<<<<<< HEAD
     internalID: 0
+=======
+    internalID: 1537655665
+>>>>>>> 97751d5ff8d36bedb0de813f56fbf5dd54f10f92
     vertices: []
     indices: 
     edges: []
