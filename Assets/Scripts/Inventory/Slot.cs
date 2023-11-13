@@ -5,21 +5,23 @@ public class Slot : MonoBehaviour
 {
     public Item item;
     public Image itemIcon;
-    public Image itemImage3; // ºº π¯¬∞ ¿ÃπÃ¡ˆ∏¶ «•Ω√«“ UI ø‰º“ √ﬂ∞°
+    public Image itemImage3; 
 
     private void Awake()
     {
-        // ºº π¯¬∞ ¿ÃπÃ¡ˆ UI ø‰º“∏¶ √£æ∆º≠ √ ±‚»≠
         itemImage3 = transform.Find("Item Image").GetComponent<Image>();
         itemIcon = GetComponent<Image>();
     }
 
 
     public void UpdateSlotUI()
+{
+    if (item != null && itemImage3 != null)
     {
-        if (item != null && item.itemImage3 != null)
+        itemImage3.sprite = item.itemImage3;
+
+        if (item.itemImage3 != null)
         {
-            itemImage3.sprite = item.itemImage3;
             itemImage3.gameObject.SetActive(true);
         }
         else
@@ -27,10 +29,22 @@ public class Slot : MonoBehaviour
             itemImage3.gameObject.SetActive(false);
         }
     }
+    else
+    {
+        // itemÏù¥ nullÏù¥Í±∞ÎÇò itemImage3Í∞Ä nullÏù∏ Í≤ΩÏö∞
+        if (itemImage3 != null)
+        {
+            itemImage3.gameObject.SetActive(false);
+        }
+    }
+}
+
+
 
     public void RemoveSlot()
     {
         item = null;
         itemImage3.gameObject.SetActive(false);
     }
+
 }

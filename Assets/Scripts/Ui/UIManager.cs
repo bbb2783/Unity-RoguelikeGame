@@ -22,11 +22,11 @@ public class UIManager : MonoBehaviour
 
         if (allItemsCollected)
         {
-            SceneManager.LoadScene("MonsterScene");
+            SceneManager.LoadScene("MainLab");
         }
         else
         {
-            SceneManager.LoadScene("MonsterScene");
+            SceneManager.LoadScene("MainLab");
         }
     }
 

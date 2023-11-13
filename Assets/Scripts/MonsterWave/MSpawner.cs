@@ -18,9 +18,9 @@ public class MSpawner : MonoBehaviour
     void Update()
     {
         MTimer += Time.deltaTime;
-        spawnLevel = Mathf.FloorToInt(MGameManager.instance.gameTime / 150f);
+        spawnLevel = Mathf.FloorToInt(MGameManager.instance.gameTime / 75f);
 
-        if (MTimer > SpawnData[spawnLevel].spawnTime && MGameManager.instance.gameTime<290) {
+        if (MTimer > SpawnData[spawnLevel].spawnTime && MGameManager.instance.gameTime<149) {
             MTimer = 0;
             MSpawn();
         }  

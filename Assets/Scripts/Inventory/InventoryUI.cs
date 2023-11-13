@@ -10,8 +10,11 @@ public class InventoryUI : MonoBehaviour
 
     public Slot[] slots; // 인벤토리 슬롯을 배열로 선언
     public Transform slotHolder;
+    Transform playerTransform; // 플레이어 캐릭터의 Transform 컴포넌트
+    public Transform[] spawnPoints; // 아이템 뿌리는 장소
+   
     
-    
+    List<Vector3> itemPositions = new List<Vector3>();
     private void Start() 
     {
         inven = Inventory.instance;
@@ -20,8 +23,11 @@ public class InventoryUI : MonoBehaviour
         inven.onChangeItem +=RedrawSlotUI;
         LoadInventory();
         RedrawSlotUI();
+        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
         inventoryPanel.SetActive(activeInventory);
     }
+
+    
     private void OnDestroy()
     {
         SaveInventory(); // 게임 종료 시 인벤토리 정보 저장
@@ -63,19 +69,35 @@ public class InventoryUI : MonoBehaviour
         }
     }
     private void SlotChange(int val)
+{
+    for (int i = 0; i < slots.Length; i++)
     {
-        for(int i =0; i<slots.Length; i++)
+        if (i < inven.SlotCnt)
         {
-            if(i<inven.SlotCnt)
+            // 슬롯이 존재하고 유효한지 확인
+            if (slots[i] != null)
             {
-                slots[i].GetComponent<Button>().interactable = true;
+                Button slotButton = slots[i].GetComponent<Button>();
+                if (slotButton != null)
+                {
+                    slotButton.interactable = true;
+                }
             }
-            else
+        }
+        else
+        {
+            if (slots[i] != null)
             {
-                slots[i].GetComponent<Button>().interactable = false;
+                Button slotButton = slots[i].GetComponent<Button>();
+                if (slotButton != null)
+                {
+                    slotButton.interactable = false;
+                }
             }
         }
     }
+}
+
 
     private void Update()
     {
@@ -83,13 +105,31 @@ public class InventoryUI : MonoBehaviour
         if(Input.GetMouseButtonDown(0) || Input.GetMouseButton(0))
         {
             transform.position = Input.mousePosition;
+            HandleItemClick();
         }
         if(Input.GetKeyDown(KeyCode.I)) 
         {
             activeInventory = !activeInventory; // i키를 눌려서 false된 인벤토리를 true값으로 바꿔서 실행
             inventoryPanel.SetActive(activeInventory);
         }
+
     }
+
+    private void HandleItemClick()
+{
+    // 클릭 이벤트 처리 메서드
+    Vector3 mousePosition = Input.mousePosition;
+    mousePosition.z = 10; // 화면에서 아이템이 표시되는 Z 좌표
+
+    // 마우스 포인터의 스크린 좌표를 월드 좌표로 변환
+    Vector3 worldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
+
+    // 클릭 위치에서 아이템을 찾거나 처리하는 로직 추가
+    // 예: 아이템 스폰 또는 아이템 클릭 시 동작 등
+
+    // 아이템을 찾았고 처리했다면 아래처럼 인벤토리 UI를 업데이트
+    RedrawSlotUI();
+}
 
     public void AddSlot()
     {
@@ -97,28 +137,87 @@ public class InventoryUI : MonoBehaviour
     }
 
     void RedrawSlotUI()
+{
+    for (int i = 0; i < slots.Length; i++)
     {
-        for (int i = 0; i < slots.Length; i++)
+        if (i < inven.items.Count)
         {
-            slots[i].RemoveSlot();
+            slots[i].item = inven.items[i];
+            slots[i].UpdateSlotUI();
 
-            if (i < inven.items.Count)
+            // 아이템의 세 번째 이미지를 직접 설정
+            if (slots[i].item != null && slots[i].item.itemImage3 != null)
             {
-                slots[i].item = inven.items[i];
-                slots[i].UpdateSlotUI();
-
-                // 아이템의 세 번째 이미지를 직접 설정
-                if (slots[i].item != null && slots[i].item.itemImage3 != null)
-                {
-                    slots[i].itemImage3.sprite = slots[i].item.itemImage3;
-                    slots[i].itemImage3.gameObject.SetActive(true);
-                }
-                else
-                {
-                    slots[i].itemImage3.gameObject.SetActive(false);
-                }
+                // 이미지 제거 대신 새 이미지로 업데이트
+                slots[i].itemImage3.sprite = slots[i].item.itemImage3;
+                slots[i].itemImage3.gameObject.SetActive(true);
+            }
+            else
+            {
+                // 이미지가 없는 경우 비활성화
+                slots[i].itemImage3.gameObject.SetActive(false);
             }
         }
+        else
+        {
+            // 인벤토리에 아이템이 없는 슬롯의 이미지 비활성화
+            slots[i].RemoveSlot();
+        }
     }
+}
+
+    public void OnItemClick(int itemIndex)
+{
+    if (itemIndex >= 0 && itemIndex < inven.items.Count)
+    {
+        Item clickedItem = inven.items[itemIndex];
+
+        // 가능한 스폰 위치 중에서 아이템이 없는 위치를 찾습니다.
+        List<Transform> availableSpawnPoints = new List<Transform>();
+        foreach (Transform spawnPoint in spawnPoints)
+        {
+            if (!IsItemInPosition(spawnPoint.position))
+            {
+                availableSpawnPoints.Add(spawnPoint);
+            }
+        }
+
+        if (availableSpawnPoints.Count > 0)
+        {
+            // 아이템이 없는 스폰 위치 중 하나를 무작위로 선택하여 아이템을 그 위치에 스폰합니다.
+            int randomIndex = Random.Range(0, availableSpawnPoints.Count);
+            Vector3 spawnPosition = availableSpawnPoints[randomIndex].position;
+
+            GameObject spawnedItem = Instantiate(clickedItem.itemPrefab, spawnPosition, Quaternion.identity);
+            
+            // 아이템 스폰 후 해당 슬롯의 아이템을 제거
+            inven.RemoveItem(clickedItem);
+            
+            // 인벤토리 UI 갱신
+            RedrawSlotUI();
+        }
+    }
+}
+
+
+
+
+    bool IsItemInPosition(Vector3 position)
+{
+    float radius = 1.0f; // 아이템을 확인할 반경
+
+    Collider[] colliders = Physics.OverlapSphere(position, radius);
+    foreach (Collider collider in colliders)
+    {
+        if (collider.CompareTag("Item")) // 아이템을 식별할 태그를 사용
+        {
+            return true; // 아이템이 해당 위치에 존재
+        }
+    }
+    return false; // 아이템이 해당 위치에 없음
+}
+
+
+
 
 }

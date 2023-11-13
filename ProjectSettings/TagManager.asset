@@ -11,6 +11,8 @@ TagManager:
   - wall
   - FieldObject
   - npc
+  - speeddown
+  - dotDemage
   layers:
   - Default
   - TransparentFX
@@ -21,8 +23,8 @@ TagManager:
   - player
   - bullet
   - background
-  - 
-  - 
+  - gimmick
+  - minimap
   - 
   - 
   - 

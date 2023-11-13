@@ -157,7 +157,11 @@ MonoBehaviour:
     itemType: 0
     itemName: 
     itemImage: {fileID: 0}
+    itemImage2: {fileID: 0}
+    itemImage3: {fileID: 0}
+    itemPrefab: {fileID: 0}
   itemIcon: {fileID: 6979625880822257514}
+  itemImage3: {fileID: 0}
 --- !u!1 &8467680249705988946
 GameObject:
   m_ObjectHideFlags: 0

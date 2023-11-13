@@ -2368,7 +2368,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 816407713}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5756291100f6b294f90d59812a3cb668, type: 3}
   m_Name: 
@@ -2966,7 +2966,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &965104083
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4387,6 +4387,7 @@ MonoBehaviour:
     itemImage: {fileID: 21300000, guid: 4e9909e83c50d3646840a867841cd94f, type: 3}
     itemImage2: {fileID: 21300000, guid: 84b147cca4e06c94fa1196cd1dd1b1ed, type: 3}
     itemImage3: {fileID: 21300000, guid: b7da8a75d386c3540a2df6a307f90a81, type: 3}
+    itemPrefab: {fileID: 5394866240705891608, guid: e707f7a59516fa34ab8bbae548abd2ae, type: 3}
   - Atk: 0
     itemDescription: "\uC232\uC5D0\uC11C \uBCC4\uACAC\uB41C [\uB098\uBB34\uC5F4\uB9E4]\uC774\uB2E4.
       \uCC38\uB098\uBB34\uC18D\uC5D0 \uC18D\uD558\uB294 \uB098\uBB34\uC5D0\uC11C
@@ -4397,6 +4398,7 @@ MonoBehaviour:
     itemImage: {fileID: 21300000, guid: 8ad47e3718a6c8741b7c44373ba341da, type: 3}
     itemImage2: {fileID: 21300000, guid: a0e566b931f64a145ad5245502f4a726, type: 3}
     itemImage3: {fileID: 21300000, guid: d8a2a758df875624c992bfb0ce7a4e9e, type: 3}
+    itemPrefab: {fileID: 5394866240705891608, guid: e707f7a59516fa34ab8bbae548abd2ae, type: 3}
   - Atk: 0
     itemDescription: "\uB3C4\uC2DC\uC5D0\uC11C \uBC1C\uACAC\uB41C [\uAF43]\uC774\uB2E4.
       \uAF43\uC740 \uC5FD\uC561\uC5D0\uC11C \uACC4\uC18D \uD53C\uBA70 \uC5F0\uD55C
@@ -4406,6 +4408,7 @@ MonoBehaviour:
     itemImage: {fileID: 21300000, guid: 41839117b03d71641a40322dbc758db4, type: 3}
     itemImage2: {fileID: 21300000, guid: 87d45e729e52b7144b11adde0cf5c967, type: 3}
     itemImage3: {fileID: 21300000, guid: 27e8185b2f5dcbe498e23eb16e7659c6, type: 3}
+    itemPrefab: {fileID: 5394866240705891608, guid: e707f7a59516fa34ab8bbae548abd2ae, type: 3}
   - Atk: 0
     itemDescription: "\uAC15\uAC00\uC5D0\uC11C \uBC1C\uACAC\uB41C \uCC38\uB098\uBB34\uBAA9
       [\uC790\uC791\uB098\uBB34\uACFC]\uC5D0 \uC18D\uD558\uB294 \uAD00\uC18D\uC2DD\uBB3C\uC774\uB2E4.
@@ -4416,6 +4419,7 @@ MonoBehaviour:
     itemImage: {fileID: 21300000, guid: 75e5807dad0b6b24bbcc1b0ef4b7f200, type: 3}
     itemImage2: {fileID: 21300000, guid: daba36510630ffd48a02a6c2deeb53ec, type: 3}
     itemImage3: {fileID: 21300000, guid: e2098605d8b93074689e7d4a1687ad87, type: 3}
+    itemPrefab: {fileID: 0}
   - Atk: 0
     itemDescription: "\uAC15\uAC00\uC5D0\uC11C \uBC1C\uACAC\uB41C \uAD6D\uD654\uACFC\uC5D0
       \uC18D\uD55C \uC5EC\uB7EC\uD574\uC0B4\uC774\uD480\uC774\uB2E4. \uBFCC\uB9AC\uC78E\uC740
@@ -4427,6 +4431,7 @@ MonoBehaviour:
     itemImage: {fileID: 21300000, guid: ca94a28f151c5f547bf2e89717fc2ed9, type: 3}
     itemImage2: {fileID: 21300000, guid: 2f2b83398cd27b648b6d43b2c2a12a1e, type: 3}
     itemImage3: {fileID: 21300000, guid: 4303e5a7b93e8c043803f8280db0d220, type: 3}
+    itemPrefab: {fileID: 5394866240705891608, guid: e707f7a59516fa34ab8bbae548abd2ae, type: 3}
   - Atk: 0
     itemDescription: "\uD754\uD558\uAC8C \uBCFC \uC218 \uC788\uB358 \uD480\uC774\uB77C\uACE0
       \uD55C\uB2E4. \uAE30\uD6C4\uAC00 \uBCC0\uD654\uB418\uBA74\uC11C \uC810\uCC28
@@ -4436,6 +4441,7 @@ MonoBehaviour:
     itemImage: {fileID: 21300000, guid: ca5a9482302f3424582269a99d0a597d, type: 3}
     itemImage2: {fileID: 21300000, guid: 82c7ad1534473974abec4d0ad36ab13f, type: 3}
     itemImage3: {fileID: 21300000, guid: d8a2a758df875624c992bfb0ce7a4e9e, type: 3}
+    itemPrefab: {fileID: 5394866240705891608, guid: e707f7a59516fa34ab8bbae548abd2ae, type: 3}
   - Atk: 0
     itemDescription: "\uD754\uD558\uAC8C \uBCFC \uC218 \uC788\uB358 \uD480\uC774\uB77C\uACE0
       \uD55C\uB2E4. \uAE30\uD6C4\uAC00 \uBCC0\uD654\uB418\uBA74\uC11C \uC810\uCC28
@@ -4445,6 +4451,7 @@ MonoBehaviour:
     itemImage: {fileID: 21300000, guid: be1b28b929c015d43a5cfb0fbca27256, type: 3}
     itemImage2: {fileID: 21300000, guid: 82c7ad1534473974abec4d0ad36ab13f, type: 3}
     itemImage3: {fileID: 21300000, guid: d8a2a758df875624c992bfb0ce7a4e9e, type: 3}
+    itemPrefab: {fileID: 5394866240705891608, guid: e707f7a59516fa34ab8bbae548abd2ae, type: 3}
   - Atk: 0
     itemDescription: "\uC232\uC5D0\uC11C \uBC1C\uACAC\uB41C [\uB098\uBB34 \uC5F4\uB9E4]\uC774\uB2E4.
       \uC18C\uB098\uBB34\uACFC\uC5D0 \uC18D\uD558\uB294 \uB098\uBB34\uC5D0\uC11C
@@ -4455,6 +4462,7 @@ MonoBehaviour:
     itemImage: {fileID: 21300000, guid: de7cbd82782cb314dacc71b4a6294059, type: 3}
     itemImage2: {fileID: 21300000, guid: 171cc63c7bfc85c41a79a07729bd7c4b, type: 3}
     itemImage3: {fileID: 21300000, guid: 9b08f68b7b910754b97d7f57a9540081, type: 3}
+    itemPrefab: {fileID: 5394866240705891608, guid: e707f7a59516fa34ab8bbae548abd2ae, type: 3}
   - Atk: 0
     itemDescription: "\uC232\uC5D0\uC11C \uBC1C\uACAC\uB41C [\uB098\uBB34]\uC758
       \uBC11\uB3D9\uC774\uB2E4. \uAECD\uC9C8\uC758 \uC0C9\uC740 \uD751\uAC08\uC0C9\uC5D0
@@ -4465,6 +4473,7 @@ MonoBehaviour:
     itemImage: {fileID: 21300000, guid: 34ae6981e556ede40a5c25370ab7fd11, type: 3}
     itemImage2: {fileID: 21300000, guid: 0e115f8dcb4fc7b41a1748e38116c8f9, type: 3}
     itemImage3: {fileID: 21300000, guid: 0c1e0a8a325664340b2536e24a8c62a7, type: 3}
+    itemPrefab: {fileID: 5394866240705891608, guid: e707f7a59516fa34ab8bbae548abd2ae, type: 3}
   - Atk: 0
     itemDescription: "\uC232\uC5D0\uC11C \uBC1C\uACAC\uB41C [\uC5B4\uB9B0 \uC78E]\uC774\uB2E4.
       \uAF2C\uBD88\uAF2C\uBD88\uD55C \uD615\uD0DC\uB85C \uAC89\uC5D0\uB294 \uD558\uC580
@@ -4474,6 +4483,7 @@ MonoBehaviour:
     itemImage: {fileID: 21300000, guid: efc9b9c058e53874688771dd58611d48, type: 3}
     itemImage2: {fileID: 21300000, guid: db24044936735f047bdf72af5eb8e62e, type: 3}
     itemImage3: {fileID: 21300000, guid: 32fdb334906529144b640245fa479db3, type: 3}
+    itemPrefab: {fileID: 5394866240705891608, guid: e707f7a59516fa34ab8bbae548abd2ae, type: 3}
   - Atk: 0
     itemDescription: "\uD754\uD558\uAC8C \uBCFC \uC218 \uC788\uB358 \uD480\uC774\uB77C\uACE0
       \uD55C\uB2E4. \uAE30\uD6C4\uAC00 \uBCC0\uD654\uB418\uBA74\uC11C \uC810\uCC28
@@ -4483,6 +4493,7 @@ MonoBehaviour:
     itemImage: {fileID: 21300000, guid: 7ffb59fb9411b8f4d9f5910ff9b03b67, type: 3}
     itemImage2: {fileID: 21300000, guid: 82c7ad1534473974abec4d0ad36ab13f, type: 3}
     itemImage3: {fileID: 21300000, guid: 6777c0e4f87896142a3d80cd95a34e85, type: 3}
+    itemPrefab: {fileID: 5394866240705891608, guid: e707f7a59516fa34ab8bbae548abd2ae, type: 3}
   fieldItemPrefab: {fileID: 7941495386462156161, guid: dfb787d460fc9ae43a28b570b0ed4653, type: 3}
   pos:
   - {x: 10, y: 2, z: 0}
@@ -4815,7 +4826,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1588712103
 RectTransform:
   m_ObjectHideFlags: 0

@@ -37,7 +37,7 @@ public class Inventory : MonoBehaviour
     }
     void Start()
     {
-        SlotCnt = 4; //시작 도감 숫자
+        SlotCnt = 15; //시작 도감 숫자
     }
 
     public bool AddItem(Item _item)

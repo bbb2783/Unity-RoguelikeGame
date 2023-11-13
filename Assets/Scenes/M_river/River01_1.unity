@@ -2439,7 +2439,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameTime: 0
-  maxGameTime: 300
+  maxGameTime: 150
   isLive: 1
   player: {fileID: 541926020}
   MonsterPool: {fileID: 144595663}
