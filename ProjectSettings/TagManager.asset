@@ -13,6 +13,10 @@ TagManager:
   - npc
   - speeddown
   - dotDemage
+  - Ray
+  - Knife
+  - Undefined
+  - Electric
   layers:
   - Default
   - TransparentFX

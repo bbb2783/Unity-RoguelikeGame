@@ -34,17 +34,18 @@ public class MonsterZombieMove : MonoBehaviour
 
     void FixedUpdate()
     {
-        if(!isLive)
+        if(!isLive || anim.GetCurrentAnimatorStateInfo(0).IsName("Hit"))
             return;
 
         if (zombieHealth <= 0)
             {return;}    
         
-        Vector2 dirVec = target.position - rigid.position;
+        
+        Vector2 dirVec = target.position - rigid.position; //움직임
         Vector2 nextVec = dirVec.normalized * speed * Time.fixedDeltaTime;
         rigid.MovePosition(rigid.position + nextVec);
         rigid.velocity = Vector2.zero;
-
+        
         if(MGameManager.instance.gameTime>=300)
         {zombieHealth = 0;}
     }
@@ -74,9 +75,25 @@ public class MonsterZombieMove : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!collision.CompareTag("Bullet")) return; //총알과 충돌한게 아니면 리턴
-
-        zombieHealth -= collision.GetComponent<MBullet>().BDamage;
+        if (collision.CompareTag("Bullet")){//총알 충돌처리
+            anim.SetTrigger("isHit");
+            zombieHealth -= collision.GetComponent<MBullet>().BDamage;
+        } 
+        else if(collision.CompareTag("Knife")){//가로베기 충돌처리
+            anim.SetTrigger("isHit");
+            zombieHealth -= collision.GetComponent<MKnife>().BDamage;
+            StartCoroutine(KnockBack());
+        }
+        else if(collision.CompareTag("Electric")){//전기장 충돌처리
+            anim.SetTrigger("isHit");
+            zombieHealth -= collision.GetComponent<MElectric>().BDamage;
+            speed = 0;
+        }
+        else if(collision.CompareTag("Ray")){//레일건 충돌처리
+            anim.SetTrigger("isHit");
+            zombieHealth -= collision.GetComponent<MRay>().BDamage;
+        }
+        else {return;}
 
         if (zombieHealth > 0)
         {
@@ -94,4 +111,12 @@ public class MonsterZombieMove : MonoBehaviour
         {
             gameObject.SetActive(false);
         }
+
+    IEnumerator KnockBack()
+    {
+        yield return wait; //딜레이
+        Vector3 playerPos =  MGameManager.instance.player.transform.position;
+        Vector3 dirVec = transform.position - playerPos;
+        rigid.AddForce(dirVec.normalized * 10, ForceMode2D.Impulse);
+    }
 }

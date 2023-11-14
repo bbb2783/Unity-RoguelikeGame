@@ -9,13 +9,13 @@ public class MGun : MonoBehaviour
     private Rigidbody2D gunRB;//총 움직임
     private Vector2 mousePos;//마우스 값 받아옴
     private float angle;//마우스 각
+    int modeSet = 0;
     
     private float scaleX;
     private float scaleY;
     private float scaleZ;
     SpriteRenderer rend;
     Rigidbody2D rigid;
-    public int modeSet = 1;
     
     void start()
     {
@@ -47,29 +47,40 @@ public class MGun : MonoBehaviour
             transform.rotation = Quaternion.Lerp(transform.rotation,
             Quaternion.AngleAxis(angle * Mathf.Rad2Deg, Vector3.forward), turnSpd * Time.deltaTime);
         }
-
-        if(Input.GetKeyDown(KeyCode.Q)) modeSet=2;
-        else if(Input.GetKeyDown(KeyCode.E)) modeSet=3;
-        else if(Input.GetKeyDown(KeyCode.R)) modeSet=4;
-        else if(Input.GetKeyDown(KeyCode.F)) modeSet=1;//테스트용
         
-        if(modeSet==1){
+        if(Input.GetKeyDown(KeyCode.Q)) modeSet = 1;
+        else if(Input.GetKeyDown(KeyCode.E)) modeSet = 2;
+        else if(Input.GetKeyDown(KeyCode.R)) modeSet = 3;
+        else if(Input.GetKeyDown(KeyCode.LeftShift)) modeSet = 0;
+
+        if(modeSet == 0){//기본공격
             if(Input.GetMouseButtonDown(0))
             {
                 GameObject Bullet = Instantiate(Resources.Load<GameObject>("Prefab/Bullet"), transform.position, transform.rotation);
                 Bullet.GetComponent<Rigidbody2D>().velocity = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle)) * Bullet.GetComponent<MBullet>().bulletSpd;
             }
         }
+        else if(modeSet == 1){
+            //가로베기
+            if(Input.GetMouseButtonDown(0))
+            {
+                GameObject Ray = Instantiate(Resources.Load<GameObject>("Prefab/Knife"), transform.position, transform.rotation);
+            }
+        }
         else if(modeSet == 2){
-            //횡 베기
+            //전기장
+            if(Input.GetMouseButtonDown(0))
+            {
+                GameObject Ray = Instantiate(Resources.Load<GameObject>("Prefab/Electric"), transform.position, transform.rotation);
+            }
         }
         else if(modeSet == 3){
-            //전기장
-        }
-        else if(modeSet == 4){
             //레일건
-            GameObject Bullet = Instantiate(Resources.Load<GameObject>("Prefab/Ray"), transform.position, transform.rotation);
-            Bullet.GetComponent<Rigidbody2D>().velocity = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle)) * Bullet.GetComponent<MBullet>().bulletSpd;
+            if(Input.GetMouseButtonDown(0))
+            {
+                GameObject Ray = Instantiate(Resources.Load<GameObject>("Prefab/Ray"), transform.position, transform.rotation);
+            }
         }
+        
     }
 }

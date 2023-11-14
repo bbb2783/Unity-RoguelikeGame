@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class InventoryUI : MonoBehaviour
 {
     Inventory inven;
-    public GameObject inventoryPanel; //인벤토리 오브젝트
+    public GameObject inventoryPanel; //인벤토리 오브젝 트
     bool activeInventory = false; // 항상 false 값으로 표현 
 
     public Slot[] slots; // 인벤토리 슬롯을 배열로 선언
@@ -116,20 +116,24 @@ public class InventoryUI : MonoBehaviour
     }
 
     private void HandleItemClick()
-{
-    // 클릭 이벤트 처리 메서드
-    Vector3 mousePosition = Input.mousePosition;
-    mousePosition.z = 10; // 화면에서 아이템이 표시되는 Z 좌표
+    {
+        // 클릭 이벤트 처리 메서드
+        Vector3 mousePosition = Input.mousePosition;
+        mousePosition.z = 10; // 화면에서 아이템이 표시되는 Z 좌표
 
-    // 마우스 포인터의 스크린 좌표를 월드 좌표로 변환
-    Vector3 worldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
+        // 마우스 포인터의 스크린 좌표를 월드 좌표로 변환
+        Vector3 worldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
 
-    // 클릭 위치에서 아이템을 찾거나 처리하는 로직 추가
-    // 예: 아이템 스폰 또는 아이템 클릭 시 동작 등
+        // 클릭 위치에서 아이템을 찾거나 처리하는 로직 추가
+        // 예: 아이템 스폰 또는 아이템 클릭 시 동작 등
 
-    // 아이템을 찾았고 처리했다면 아래처럼 인벤토리 UI를 업데이트
-    RedrawSlotUI();
-}
+        // 아이템이 있는지 확인 후 처리
+        if (!IsItemInPosition(worldPosition))
+        {
+            // 아이템이 없는 경우에만 인벤토리 UI를 업데이트
+            RedrawSlotUI();
+        }
+    }
 
     public void AddSlot()
     {
@@ -173,31 +177,47 @@ public class InventoryUI : MonoBehaviour
         Item clickedItem = inven.items[itemIndex];
 
         // 가능한 스폰 위치 중에서 아이템이 없는 위치를 찾습니다.
-        List<Transform> availableSpawnPoints = new List<Transform>();
-        foreach (Transform spawnPoint in spawnPoints)
-        {
-            if (!IsItemInPosition(spawnPoint.position))
-            {
-                availableSpawnPoints.Add(spawnPoint);
-            }
-        }
+        Transform spawnPoint = GetNextAvailableSpawnPoint();
 
-        if (availableSpawnPoints.Count > 0)
+        if (spawnPoint != null)
         {
-            // 아이템이 없는 스폰 위치 중 하나를 무작위로 선택하여 아이템을 그 위치에 스폰합니다.
-            int randomIndex = Random.Range(0, availableSpawnPoints.Count);
-            Vector3 spawnPosition = availableSpawnPoints[randomIndex].position;
-
+            // 아이템이 없는 스폰 위치에 아이템을 스폰합니다.
+            Vector3 spawnPosition = spawnPoint.position;
             GameObject spawnedItem = Instantiate(clickedItem.itemPrefab, spawnPosition, Quaternion.identity);
-            
+
             // 아이템 스폰 후 해당 슬롯의 아이템을 제거
             inven.RemoveItem(clickedItem);
-            
+
             // 인벤토리 UI 갱신
             RedrawSlotUI();
         }
     }
 }
+
+int spawnPointIndex = 0;
+
+Transform GetNextAvailableSpawnPoint()
+{
+    int originalIndex = spawnPointIndex;
+
+    do
+    {
+        Transform spawnPoint = spawnPoints[spawnPointIndex];
+
+        // 현재 스폰 포인트에 아이템이 없으면 해당 위치를 반환합니다.
+        if (!IsItemInPosition(spawnPoint.position))
+        {
+            spawnPointIndex = (spawnPointIndex + 1) % spawnPoints.Length; // 다음 인덱스로 업데이트
+            return spawnPoint;
+        }
+
+        spawnPointIndex = (spawnPointIndex + 1) % spawnPoints.Length; // 다음 인덱스로 업데이트
+    } while (spawnPointIndex != originalIndex); // 모든 스폰 포인트를 확인했는지 검사
+
+    // 모든 스폰 포인트에 아이템이 있다면 null을 반환합니다.
+    return null;
+}
+
 
 
 
