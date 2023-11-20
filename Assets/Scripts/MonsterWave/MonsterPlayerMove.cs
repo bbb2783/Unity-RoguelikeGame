@@ -69,9 +69,6 @@ public class MonsterPlayerMove : MonoBehaviour
             }
     }
 
-    
-
-
     void OnCollisionStay2D(Collision2D collision)//플레이어 체력관리
     {
         if(!MGameManager.instance.isLive) return;
