@@ -68,7 +68,8 @@ public class MonsterPlayerMove : MonoBehaviour
                 }
             }
 
-        //if(MGun.modeSet == 1 && Input.GetMouseButtonDown(0)) anim.SetTrigger("isKnife");
+        if(MGun.modeSet == 1 && Input.GetMouseButtonDown(0)) anim.SetTrigger("isKnife");//스킬 사용시 애니메이션
+        if(MGun.modeSet == 2 && Input.GetMouseButtonDown(0)) anim.SetTrigger("isThrow");
     }
 
     void OnCollisionStay2D(Collision2D collision)//플레이어 체력관리

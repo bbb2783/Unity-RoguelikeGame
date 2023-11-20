@@ -10,7 +10,7 @@ public class MGun : MonoBehaviour
     private Rigidbody2D gunRB;//총 움직임
     private Vector2 mousePos;//마우스 값 받아옴
     private float angle;//마우스 각
-    int modeSet = 0;
+    public static int modeSet = 0;
     
     private float scaleX;
     private float scaleY;
@@ -23,6 +23,13 @@ public class MGun : MonoBehaviour
     float coolTimeSpeed = 1.0f;
     bool isUse = true;
     public Image coolimage;
+
+    float EcoolTime = 20.0f; //전기장 쿨타임
+    float EleftTime = 0.0f;
+    bool isEUse = true;
+    public Image Ecoolimage;
+    float EcoolTimeSpeed = 1.0f;
+
 
     public Image Qspot;//키 스포트라이트
     public Image Espot;
@@ -48,7 +55,7 @@ public class MGun : MonoBehaviour
         angle = Mathf.Atan2(mousePos.y - transform.position.y, mousePos.x - transform.position.x); 
         
 
-        if(angle < 1.5 && angle > -1.5)
+        if(angle < 1.5 && angle > -1.5)//플레이어 본이 마우스 좌표를 향해 회전하지 않음 -> 팔이 포함된 애니메이션이 원인!!!!!!!!! -> 해결
         {
             angle = Mathf.Atan2(mousePos.y - transform.position.y, mousePos.x - transform.position.x); 
             transform.rotation = Quaternion.Lerp(transform.rotation,
@@ -62,12 +69,22 @@ public class MGun : MonoBehaviour
         
         if(leftTime > 0){ //레일건 쿨타임 돌리기
             leftTime -= Time.deltaTime*coolTimeSpeed;
-            if(leftTime<0){
+            if(leftTime < 0){
                 leftTime = 0;
                 isUse = true;
             }
             float ratio = 1.0f - (leftTime / coolTime);
             if(coolimage) coolimage.fillAmount = ratio;
+        }
+
+        if(EleftTime > 0){ //전기장 쿨타임 돌리기
+            EleftTime -= Time.deltaTime*EcoolTimeSpeed;
+            if(EleftTime < 0){
+                EleftTime = 0;
+                isEUse = true;
+            }
+            float Eratio = 1.0f - (EleftTime / EcoolTime);
+            if(Ecoolimage) Ecoolimage.fillAmount = Eratio;
         }
         
         
@@ -80,7 +97,6 @@ public class MGun : MonoBehaviour
         if(modeSet == 0){//기본공격
             if(Input.GetMouseButtonDown(0))
             {
-                Debug.Log(angle);
                 GameObject Bullet = Instantiate(Resources.Load<GameObject>("Prefab/Bullet"), transform.position, transform.rotation);
                 Bullet.GetComponent<Rigidbody2D>().velocity = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle)) * Bullet.GetComponent<MBullet>().bulletSpd;
             }
@@ -94,9 +110,11 @@ public class MGun : MonoBehaviour
         }
         else if(modeSet == 2){
             //전기장
-            if(Input.GetMouseButtonDown(0))
+            if(Input.GetMouseButtonDown(0) && isEUse == true)
             {
-                GameObject Ray = Instantiate(Resources.Load<GameObject>("Prefab/Electric"), transform.position, transform.rotation);
+                GameObject Ray = Instantiate(Resources.Load<GameObject>("Prefab/Electric"), transform.position, Quaternion.identity);
+                isEUse = false;
+                EleftTime = 20.0f;
             }
         }
         else if(modeSet == 3){
