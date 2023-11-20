@@ -15,7 +15,7 @@ public class MRay : MonoBehaviour
 
     void Update()
     {
-        if (Time.time - BulletTimer >= 2)
+        if (Time.time - BulletTimer >= 0.3f)
         {
             Destroy(gameObject);
         }

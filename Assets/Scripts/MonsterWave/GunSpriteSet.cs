@@ -25,6 +25,7 @@ public class GunSpriteSet : MonoBehaviour
         {
             GunAndArm.color = new Color(1,1,1,1f);
         }
+            
         else 
         {
             GunAndArm.color = new Color(1,1,1,0f);

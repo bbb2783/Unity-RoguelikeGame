@@ -67,6 +67,8 @@ public class MonsterPlayerMove : MonoBehaviour
                 MGameManager.instance.playerMana += 1;
                 }
             }
+
+        //if(MGun.modeSet == 1 && Input.GetMouseButtonDown(0)) anim.SetTrigger("isKnife");
     }
 
     void OnCollisionStay2D(Collision2D collision)//플레이어 체력관리

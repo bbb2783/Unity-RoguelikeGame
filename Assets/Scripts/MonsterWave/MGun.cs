@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MGun : MonoBehaviour
 {
@@ -16,6 +17,16 @@ public class MGun : MonoBehaviour
     private float scaleZ;
     SpriteRenderer rend;
     Rigidbody2D rigid;
+
+    float coolTime = 10.0f; //레일건 쿨타임
+    float leftTime = 0.0f;
+    float coolTimeSpeed = 1.0f;
+    bool isUse = true;
+    public Image coolimage;
+
+    public Image Qspot;//키 스포트라이트
+    public Image Espot;
+    public Image Rspot;
     
     void start()
     {
@@ -35,6 +46,7 @@ public class MGun : MonoBehaviour
     {
         mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         angle = Mathf.Atan2(mousePos.y - transform.position.y, mousePos.x - transform.position.x); 
+        
 
         if(angle < 1.5 && angle > -1.5)
         {
@@ -48,14 +60,27 @@ public class MGun : MonoBehaviour
             Quaternion.AngleAxis(angle * Mathf.Rad2Deg, Vector3.forward), turnSpd * Time.deltaTime);
         }
         
-        if(Input.GetKeyDown(KeyCode.Q)) modeSet = 1;
-        else if(Input.GetKeyDown(KeyCode.E)) modeSet = 2;
-        else if(Input.GetKeyDown(KeyCode.R)) modeSet = 3;
-        else if(Input.GetKeyDown(KeyCode.LeftShift)) modeSet = 0;
+        if(leftTime > 0){ //레일건 쿨타임 돌리기
+            leftTime -= Time.deltaTime*coolTimeSpeed;
+            if(leftTime<0){
+                leftTime = 0;
+                isUse = true;
+            }
+            float ratio = 1.0f - (leftTime / coolTime);
+            if(coolimage) coolimage.fillAmount = ratio;
+        }
+        
+        
+        
+        if(Input.GetKeyDown(KeyCode.Q)) {modeSet = 1; Qspot.gameObject.SetActive(true); Rspot.gameObject.SetActive(false); Espot.gameObject.SetActive(false);}
+        else if(Input.GetKeyDown(KeyCode.E)) {modeSet = 2; Qspot.gameObject.SetActive(false); Rspot.gameObject.SetActive(false); Espot.gameObject.SetActive(true);}
+        else if(Input.GetKeyDown(KeyCode.R)) {modeSet = 3; Qspot.gameObject.SetActive(false); Rspot.gameObject.SetActive(true); Espot.gameObject.SetActive(false);}
+        else if(Input.GetKeyDown(KeyCode.LeftShift)) {modeSet = 0; Qspot.gameObject.SetActive(false); Rspot.gameObject.SetActive(false); Espot.gameObject.SetActive(false);}
 
         if(modeSet == 0){//기본공격
             if(Input.GetMouseButtonDown(0))
             {
+                Debug.Log(angle);
                 GameObject Bullet = Instantiate(Resources.Load<GameObject>("Prefab/Bullet"), transform.position, transform.rotation);
                 Bullet.GetComponent<Rigidbody2D>().velocity = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle)) * Bullet.GetComponent<MBullet>().bulletSpd;
             }
@@ -76,9 +101,11 @@ public class MGun : MonoBehaviour
         }
         else if(modeSet == 3){
             //레일건
-            if(Input.GetMouseButtonDown(0))
+            if(Input.GetMouseButtonDown(0) && isUse == true)
             {
                 GameObject Ray = Instantiate(Resources.Load<GameObject>("Prefab/Ray"), transform.position, transform.rotation);
+                isUse = false;
+                leftTime = 10.0f;
             }
         }
         
