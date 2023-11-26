@@ -3135,6 +3135,7 @@ MonoBehaviour:
   inventoryPanel: {fileID: 816407713}
   slots: []
   slotHolder: {fileID: 1813666818}
+  spawnPoints: []
 --- !u!225 &1145860027
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -3965,30 +3966,40 @@ MonoBehaviour:
     itemName: "\uB9C8\uB9AC\uACE8\uB4DC"
     itemImage: {fileID: 21300000, guid: 4e9909e83c50d3646840a867841cd94f, type: 3}
     itemImage2: {fileID: 21300000, guid: 84b147cca4e06c94fa1196cd1dd1b1ed, type: 3}
+    itemImage3: {fileID: 21300000, guid: b7da8a75d386c3540a2df6a307f90a81, type: 3}
+    itemPrefab: {fileID: 0}
   - Atk: 0
     itemDescription: 
     itemType: 1
     itemName: "\uBCA0\uACE0\uB2C8\uC544"
     itemImage: {fileID: 21300000, guid: 41839117b03d71641a40322dbc758db4, type: 3}
     itemImage2: {fileID: 21300000, guid: 87d45e729e52b7144b11adde0cf5c967, type: 3}
+    itemImage3: {fileID: 21300000, guid: 27e8185b2f5dcbe498e23eb16e7659c6, type: 3}
+    itemPrefab: {fileID: 0}
   - Atk: 0
     itemDescription: 
     itemType: 2
     itemName: "\uBBFC\uB4E4\uB808"
     itemImage: {fileID: 21300000, guid: 2c7860887a02d27488a509a3a0d7e74a, type: 3}
     itemImage2: {fileID: 21300000, guid: b43ed47e96540b84ea9785399821f679, type: 3}
+    itemImage3: {fileID: 21300000, guid: 10c5979e19492f14cb7508b0879b2504, type: 3}
+    itemPrefab: {fileID: 0}
   - Atk: 0
     itemDescription: 
     itemType: 2
     itemName: "\uB9DD\uCD08"
     itemImage: {fileID: 21300000, guid: ecfbcc6838afb384790e661de5e4c7e5, type: 3}
     itemImage2: {fileID: 21300000, guid: d2ef7c8f78c682248bde193b4f0e885e, type: 3}
+    itemImage3: {fileID: 21300000, guid: ecfbcc6838afb384790e661de5e4c7e5, type: 3}
+    itemPrefab: {fileID: 0}
   - Atk: 0
     itemDescription: 
     itemType: 2
     itemName: "\uAC15\uC544\uC9C0\uD480"
     itemImage: {fileID: 21300000, guid: 7ffb59fb9411b8f4d9f5910ff9b03b67, type: 3}
     itemImage2: {fileID: 21300000, guid: ee4538a4c17ca8041bc1e7ea81404f9b, type: 3}
+    itemImage3: {fileID: 21300000, guid: 6777c0e4f87896142a3d80cd95a34e85, type: 3}
+    itemPrefab: {fileID: 0}
   fieldItemPrefab: {fileID: 7941495386462156161, guid: dfb787d460fc9ae43a28b570b0ed4653, type: 3}
   pos:
   - {x: 10, y: 2, z: 0}

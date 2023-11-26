@@ -34,6 +34,7 @@ public class MGun : MonoBehaviour
     public Image Qspot;//키 스포트라이트
     public Image Espot;
     public Image Rspot;
+    public GameObject Knife;
     
     void start()
     {
@@ -89,10 +90,37 @@ public class MGun : MonoBehaviour
         
         
         
-        if(Input.GetKeyDown(KeyCode.Q)) {modeSet = 1; Qspot.gameObject.SetActive(true); Rspot.gameObject.SetActive(false); Espot.gameObject.SetActive(false);}
-        else if(Input.GetKeyDown(KeyCode.E)) {modeSet = 2; Qspot.gameObject.SetActive(false); Rspot.gameObject.SetActive(false); Espot.gameObject.SetActive(true);}
-        else if(Input.GetKeyDown(KeyCode.R)) {modeSet = 3; Qspot.gameObject.SetActive(false); Rspot.gameObject.SetActive(true); Espot.gameObject.SetActive(false);}
-        else if(Input.GetKeyDown(KeyCode.LeftShift)) {modeSet = 0; Qspot.gameObject.SetActive(false); Rspot.gameObject.SetActive(false); Espot.gameObject.SetActive(false);}
+        if(Input.GetKeyDown(KeyCode.Q)) 
+        {
+            modeSet = 1; Qspot.gameObject.SetActive(true); 
+            Rspot.gameObject.SetActive(false); 
+            Espot.gameObject.SetActive(false);
+            Knife.gameObject.SetActive(true);
+        }
+        else if(Input.GetKeyDown(KeyCode.E)) 
+        {
+            modeSet = 2; 
+            Qspot.gameObject.SetActive(false); 
+            Rspot.gameObject.SetActive(false); 
+            Espot.gameObject.SetActive(true);
+            Knife.gameObject.SetActive(false);
+        }
+        else if(Input.GetKeyDown(KeyCode.R)) 
+        {
+            modeSet = 3; 
+            Qspot.gameObject.SetActive(false); 
+            Rspot.gameObject.SetActive(true); 
+            Espot.gameObject.SetActive(false);
+            Knife.gameObject.SetActive(false);
+        }
+        else if(Input.GetKeyDown(KeyCode.LeftShift)) 
+        {
+            modeSet = 0; 
+            Qspot.gameObject.SetActive(false); 
+            Rspot.gameObject.SetActive(false); 
+            Espot.gameObject.SetActive(false);
+            Knife.gameObject.SetActive(false);
+        }
 
         if(modeSet == 0){//기본공격
             if(Input.GetMouseButtonDown(0))
@@ -112,7 +140,7 @@ public class MGun : MonoBehaviour
             //전기장
             if(Input.GetMouseButtonDown(0) && isEUse == true)
             {
-                GameObject Ray = Instantiate(Resources.Load<GameObject>("Prefab/Electric"), transform.position, Quaternion.identity);
+                GameObject Ray = Instantiate(Resources.Load<GameObject>("Prefab/Electric"), mousePos, Quaternion.identity);
                 isEUse = false;
                 EleftTime = 20.0f;
             }
